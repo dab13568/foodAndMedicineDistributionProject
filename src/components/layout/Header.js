@@ -2,9 +2,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import Modal from 'react-bootstrap/Modal'
 import Logo from './partials/Logo';
 import Button from "../elements/Button";
+import loginButton from "../elements/LoginButton";
+
 
 
 const propTypes = {
@@ -121,21 +122,22 @@ const Header = ({
                     <li>
                       <Link to="/AddDist" onClick={closeMenu}>Documentation</Link>
                     </li>
+                    <li>
+                      <loginButton/>
+                    </li>
+
                   </ul>
-                  {!hideSignin &&
                     <ul
                       className="list-reset header-nav-right"
                     >
-                      <li>
-                        <link to="#0" className="button button-primary button-wide-mobile button-sm" >Sign up</link>
-                      </li>
 
-                    </ul>}
+                    </ul>
                 </div>
               </nav>
             </>}
         </div>
       </div>
+
     </header>
   );
 }
