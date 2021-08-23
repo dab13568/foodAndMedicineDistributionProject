@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc47b117-fe2e-4cbb-9ad7-65b626457fbe" name="Default Changelist" comment="vv">
-      <change afterPath="$PROJECT_DIR$/src/views/addDistributor.js" afterDir="false" />
+    <list default="true" id="bc47b117-fe2e-4cbb-9ad7-65b626457fbe" name="Default Changelist" comment="design">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/layout/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/partials/FooterNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/partials/FooterNav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Hero.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Hero.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/LayoutDefault.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/LayoutDefault.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +72,7 @@
       <workItem from="1629640621760" duration="4312000" />
       <workItem from="1629647310172" duration="2252000" />
       <workItem from="1629654481957" duration="1492000" />
-      <workItem from="1629716886664" duration="8572000" />
+      <workItem from="1629716886664" duration="10129000" />
     </task>
     <task id="LOCAL‎00001" summary="change view">
       <created>1629640773763</created>
@@ -101,7 +92,13 @@
       <option name="presentableId" value="LOCAL‎00003" />
       <updated>1629657703501</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL‎00004" summary="design">
+      <created>1629726176577</created>
+      <option name="number" value="LOCAL‎00004" />
+      <option name="presentableId" value="LOCAL‎00004" />
+      <updated>1629726176578</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,7 +120,8 @@
     <MESSAGE value="change view" />
     <MESSAGE value="vvv" />
     <MESSAGE value="vv" />
-    <option name="LAST_COMMIT_MESSAGE" value="vv" />
+    <MESSAGE value="design" />
+    <option name="LAST_COMMIT_MESSAGE" value="design" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

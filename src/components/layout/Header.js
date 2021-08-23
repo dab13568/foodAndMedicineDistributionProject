@@ -6,33 +6,7 @@ import Modal from 'react-bootstrap/Modal'
 import Logo from './partials/Logo';
 import Button from "../elements/Button";
 
-function MyVerticallyCenteredModal() {
-console.log("fffffffffffff")
-  return (
-      <Modal
-          size="lg"
-          aria-labelledby="contained-modal-title-vcenter"
-          centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Modal heading
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <h4>Centered Modal</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button >Close</Button>
-        </Modal.Footer>
-      </Modal>
-  );
-}
+
 const propTypes = {
   navPosition: PropTypes.string,
   hideNav: PropTypes.bool,
@@ -88,11 +62,7 @@ const Header = ({
     setIsactive(false);
   }
 
-  const callModal = () => {
-    MyVerticallyCenteredModal();
-    closeMenu();
-    console.log("mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm")
-  }
+
 
   const keyPress = (e) => {
     isActive && e.keyCode === 27 && closeMenu();
@@ -157,7 +127,7 @@ const Header = ({
                       className="list-reset header-nav-right"
                     >
                       <li>
-                        <button to="#0" className="button button-primary button-wide-mobile button-sm" onClick={MyVerticallyCenteredModal}>Sign up</button>
+                        <link to="#0" className="button button-primary button-wide-mobile button-sm" >Sign up</link>
                       </li>
 
                     </ul>}
