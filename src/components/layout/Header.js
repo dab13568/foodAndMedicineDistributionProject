@@ -2,8 +2,37 @@ import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
+import Modal from 'react-bootstrap/Modal'
 import Logo from './partials/Logo';
+import Button from "../elements/Button";
 
+function MyVerticallyCenteredModal() {
+console.log("fffffffffffff")
+  return (
+      <Modal
+          size="lg"
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Modal heading
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h4>Centered Modal</h4>
+          <p>
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+            consectetur ac, vestibulum at eros.
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button >Close</Button>
+        </Modal.Footer>
+      </Modal>
+  );
+}
 const propTypes = {
   navPosition: PropTypes.string,
   hideNav: PropTypes.bool,
@@ -53,9 +82,16 @@ const Header = ({
   }
 
   const closeMenu = () => {
+    console.log('tttttttttttttttttttttttttttttttt')
     document.body.classList.remove('off-nav-is-active');
     nav.current && (nav.current.style.maxHeight = null);
     setIsactive(false);
+  }
+
+  const callModal = () => {
+    MyVerticallyCenteredModal();
+    closeMenu();
+    console.log("mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm")
   }
 
   const keyPress = (e) => {
@@ -75,6 +111,7 @@ const Header = ({
   );
 
   return (
+
     <header
       {...props}
       className={classes}
@@ -112,7 +149,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="#0" onClick={closeMenu}>Documentation</Link>
+                      <Link to="/AddDist" onClick={closeMenu}>Documentation</Link>
                     </li>
                   </ul>
                   {!hideSignin &&
@@ -120,8 +157,9 @@ const Header = ({
                       className="list-reset header-nav-right"
                     >
                       <li>
-                        <Link to="#0" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Sign up</Link>
+                        <button to="#0" className="button button-primary button-wide-mobile button-sm" onClick={MyVerticallyCenteredModal}>Sign up</button>
                       </li>
+
                     </ul>}
                 </div>
               </nav>

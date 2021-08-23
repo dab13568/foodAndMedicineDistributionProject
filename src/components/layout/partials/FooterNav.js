@@ -17,7 +17,7 @@ const FooterNav = ({
       {...props}
       className={classes}
     >
-      <ul className="list-reset">
+      <ul className="list-reset" style={{fontSize:20}}>
         <li>
           <Link to="#0">Contact</Link>
         </li>
