@@ -4,8 +4,7 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Logo from './partials/Logo';
 import Button from "../elements/Button";
-import loginButton from "../elements/LoginButton";
-
+import LoginButton from "../elements/LoginButton";
 
 
 const propTypes = {
@@ -122,8 +121,8 @@ const Header = ({
                     <li>
                       <Link to="/AddDist" onClick={closeMenu}>Documentation</Link>
                     </li>
-                    <li>
-                      <loginButton/>
+                    <li >
+                      <LoginButton/>
                     </li>
 
                   </ul>
