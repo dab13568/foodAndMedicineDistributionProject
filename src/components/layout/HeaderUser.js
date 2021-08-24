@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Logo from './partials/Logo';
+import PersistentDrawerLeft from './partials/Menu';
 import Button from "../elements/Button";
 import LoginButton from "../elements/LoginButton";
 import LogoutButton from "../elements/LogoutButton";
 import {useAuth0} from "@auth0/auth0-react";
-import ReactRoundedImage from "react-rounded-image";
 
 
 const propTypes = {
@@ -26,7 +26,7 @@ const defaultProps = {
   bottomDivider: false
 }
 
-const Header = ({
+const HeaderUser= ({
   className,
   navPosition,
   hideNav,
@@ -80,7 +80,6 @@ const Header = ({
     bottomOuterDivider && 'has-bottom-divider',
     className
   );
-  const { loginWithRedirect,isAuthenticated,isLoading,user } = useAuth0();
 
 
   return (
@@ -94,11 +93,7 @@ const Header = ({
             'site-header-inner',
             bottomDivider && 'has-bottom-divider'
           )}>
-
-          {!isAuthenticated&&(
-              <Logo />
-          )}
-
+          <PersistentDrawerLeft />
           {!hideNav &&
             <>
               <button
@@ -119,57 +114,19 @@ const Header = ({
                     isActive && 'is-active'
                   )}>
                 <div className="header-nav-inner">
-
-                  {isAuthenticated&&(
-                      <ul style={{marginTop: 27, marginLeft:27, top: 0,
-
-                        left:0,
-                        bottom: 0,
-                        position:"absolute"}}>
-                          <ReactRoundedImage  roundedColor="#ffffff" image={user.picture} roundedSize="6" imageWidth="127" imageHeight="127" />
-
-                      </ul>
-
-
-                    )}
-
                   <ul className={
                     classNames(
                       'list-reset text-xs',
                       navPosition && `header-nav-${navPosition}`
                     )}>
-                    {!isLoading && isAuthenticated &&
-                    (
-
-                        <li>
-                          <Link style={{color:"white"}} to="/FutureDivisions" onClick={closeMenu}>Future Divisions</Link>
-                        </li>
-
-                    )}
-                    {!isLoading && isAuthenticated &&
-                    (
-
-                        <li>
-                          <Link style={{color:"white"}} to="/SuccessfullyDistributed" onClick={closeMenu}>Successfully distributed</Link>
-                        </li>
-
-                    )}
-
-                    {!isLoading && isAuthenticated &&
-                    (
-
-                        <li>
-                          <Link style={{color:"white"}} to="/AdministrativeSummary" onClick={closeMenu}>Administrative Summary</Link>
-                        </li>
-
-                    )}
-
+                    <li>
+                      <Link to="/AddDist" onClick={closeMenu}>Documentation</Link>
+                    </li>
                     <li >
                       <LoginButton/>
                       <LogoutButton/>
 
                     </li>
-
                   </ul>
                 </div>
               </nav>
@@ -181,7 +138,7 @@ const Header = ({
   );
 }
 
-Header.propTypes = propTypes;
-Header.defaultProps = defaultProps;
+HeaderUser.propTypes = propTypes;
+HeaderUser.defaultProps = defaultProps;
 
-export default Header;
+export default HeaderUser;

@@ -2,22 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc47b117-fe2e-4cbb-9ad7-65b626457fbe" name="Default Changelist" comment="design">
-      <change afterPath="$PROJECT_DIR$/src/components/elements/LogoutButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/elements/Profile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/HeaderUser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/partials/Menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sections/HelloUser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/layouts/LayoutUser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Welcome.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/elements/LoginButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/elements/LoginButton.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/layout/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/FeaturesTiles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/FeaturesTiles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Hero.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Hero.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Testimonial.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Testimonial.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/LayoutDefault.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/LayoutDefault.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,7 +41,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/elements" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/sections" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -46,6 +53,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\websiteCourse\FoodAndMedicineDisributionProject\src\components\sections" />
+      <recent name="C:\websiteCourse\FoodAndMedicineDisributionProject\src\components\layout" />
+      <recent name="C:\websiteCourse\FoodAndMedicineDisributionProject\src\layouts" />
       <recent name="C:\websiteCourse\FoodAndMedicineDisributionProject\src\components\elements" />
       <recent name="C:\websiteCourse\FoodAndMedicineDisributionProject\src\views" />
     </key>
@@ -83,7 +93,8 @@
       <workItem from="1629640621760" duration="4312000" />
       <workItem from="1629647310172" duration="2252000" />
       <workItem from="1629654481957" duration="1492000" />
-      <workItem from="1629716886664" duration="31417000" />
+      <workItem from="1629716886664" duration="31521000" />
+      <workItem from="1629811161538" duration="15560000" />
     </task>
     <task id="LOCAL‎00001" summary="change view">
       <created>1629640773763</created>
@@ -127,7 +138,13 @@
       <option name="presentableId" value="LOCAL‎00007" />
       <updated>1629752865406</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL‎00008" summary="design">
+      <created>1629769193846</created>
+      <option name="number" value="LOCAL‎00008" />
+      <option name="presentableId" value="LOCAL‎00008" />
+      <updated>1629769193846</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,10 +173,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/elements/LoginButton.js</url>
-          <line>14</line>
+          <url>file://$PROJECT_DIR$/src/components/layout/HeaderUser.js</url>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

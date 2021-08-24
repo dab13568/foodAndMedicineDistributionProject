@@ -7,13 +7,14 @@ import {
     Switch,
     Route
 } from "react-router-dom";
-// Layouts
+
 import LayoutDefault from './layouts/LayoutDefault';
+import LayoutUser from './layouts/LayoutUser';
 
-// Views 
+import Welcome from './views/Welcome';
+import HelloUser from './components/sections/HelloUser';
+
 import Home from './views/Home';
-
-//Add Distributor
 import AddDist from './views/addDistributor';
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -22,18 +23,13 @@ function App () {
 
   const childRef = useRef();
 
-
-
     useEffect(() => {
     document.body.classList.add('is-loaded')
     childRef.current.init();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, );
 
-
-
-
-
+    const { user,isAuthenticated } = useAuth0();
 
 
     return (
@@ -42,9 +38,12 @@ function App () {
       children={() => (
           <Router>
             <Switch>
-              <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
-              <AppRoute exact path="/AddDist" component={AddDist} layout={LayoutDefault} />
+                {isAuthenticated && (
+                    <AppRoute exact path="/" component={HelloUser} layout={LayoutDefault} />
 
+                )}
+              <AppRoute exact path="/" component={Welcome} layout={LayoutDefault} />
+              <AppRoute exact path="/AddDist" component={AddDist} layout={LayoutDefault} />
             </Switch>
           </Router>
       )} />
