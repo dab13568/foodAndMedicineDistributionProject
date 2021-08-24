@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import Logo from './partials/Logo';
 import Button from "../elements/Button";
 import LoginButton from "../elements/LoginButton";
+import LogoutButton from "../elements/LogoutButton";
+import {useAuth0} from "@auth0/auth0-react";
 
 
 const propTypes = {
@@ -47,7 +49,7 @@ const Header = ({
       document.removeEventListener('click', clickOutside);
       closeMenu();
     };
-  });  
+  });
 
   const openMenu = () => {
     document.body.classList.add('off-nav-is-active');
@@ -56,7 +58,6 @@ const Header = ({
   }
 
   const closeMenu = () => {
-    console.log('tttttttttttttttttttttttttttttttt')
     document.body.classList.remove('off-nav-is-active');
     nav.current && (nav.current.style.maxHeight = null);
     setIsactive(false);
@@ -72,7 +73,7 @@ const Header = ({
     if (!nav.current) return
     if (!isActive || nav.current.contains(e.target) || e.target === hamburger.current) return;
     closeMenu();
-  }  
+  }
 
   const classes = classNames(
     'site-header',
@@ -80,8 +81,9 @@ const Header = ({
     className
   );
 
-  return (
+  const { user,isAuthenticated } = useAuth0();
 
+  return (
     <header
       {...props}
       className={classes}
@@ -123,14 +125,10 @@ const Header = ({
                     </li>
                     <li >
                       <LoginButton/>
+                      <LogoutButton/>
+
                     </li>
-
                   </ul>
-                    <ul
-                      className="list-reset header-nav-right"
-                    >
-
-                    </ul>
                 </div>
               </nav>
             </>}

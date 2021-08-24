@@ -15,19 +15,28 @@ import Home from './views/Home';
 
 //Add Distributor
 import AddDist from './views/addDistributor';
+import { useAuth0 } from "@auth0/auth0-react";
 
 
-const App = () => {
+function App () {
 
   const childRef = useRef();
 
-  useEffect(() => {
+
+
+    useEffect(() => {
     document.body.classList.add('is-loaded')
     childRef.current.init();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, );
 
-  return (
+
+
+
+
+
+
+    return (
     <ScrollReveal
       ref={childRef}
       children={() => (
