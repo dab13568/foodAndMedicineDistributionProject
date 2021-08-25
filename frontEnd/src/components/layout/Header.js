@@ -142,7 +142,7 @@ const Header = ({
                     (
 
                         <li>
-                          <Link style={{color:"white"}} to="/ShowMap" onClick={closeMenu}>Future Divisions</Link>
+                          <Link style={{color:"white"}} to="/ShowMap" >Future Divisions</Link>
                         </li>
 
                     )}

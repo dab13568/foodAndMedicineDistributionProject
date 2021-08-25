@@ -30,8 +30,8 @@ export default class ShowMap extends Component {
 render (){
     console.log("kuku");
         return(
-            <div>
-            <Container>
+            <div style={{marginTop:200}}>
+            <Container style={{width:"700px"}}>
                 <Row className="justify-content-md-center">
                 <Map
                     city={this.state.selectedCity}
