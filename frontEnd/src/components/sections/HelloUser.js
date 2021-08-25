@@ -43,6 +43,7 @@ const HelloUser = ({
   console.log("in hello user");
   const { user } = useAuth0();
 
+
   return (
     <section
       {...props}
