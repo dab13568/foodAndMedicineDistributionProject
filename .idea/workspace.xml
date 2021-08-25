@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="frontend-backend distibution">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/lib/oktaClient.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/lib/regOkta.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/LoginButton.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/elements/LoginButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/elements/LoginButton.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/src/components/layout/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/layout/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/views/ShowMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/views/ShowMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/HelloUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/HelloUser.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +50,8 @@
       <option name="presentableId" value="Default" />
       <updated>1629846882169</updated>
       <workItem from="1629846883588" duration="807000" />
-      <workItem from="1629848071113" duration="5644000" />
+      <workItem from="1629848071113" duration="5682000" />
+      <workItem from="1629896119062" duration="6196000" />
     </task>
     <task id="LOCAL‎00001" summary="frontend-backend distibution">
       <created>1629847584740</created>
@@ -67,7 +65,13 @@
       <option name="presentableId" value="LOCAL‎00002" />
       <updated>1629852130845</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL‎00003" summary="frontend-backend distibution">
+      <created>1629853798835</created>
+      <option name="number" value="LOCAL‎00003" />
+      <option name="presentableId" value="LOCAL‎00003" />
+      <updated>1629853798835</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
