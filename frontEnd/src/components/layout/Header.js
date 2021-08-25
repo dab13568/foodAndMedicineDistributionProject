@@ -6,6 +6,8 @@ import Logo from './partials/Logo';
 import Button from "../elements/Button";
 import LoginButton from "../elements/LoginButton";
 import LogoutButton from "../elements/LogoutButton";
+import AddUserButtonTemp from "../elements/addUserTempButton";
+
 import {useAuth0} from "@auth0/auth0-react";
 import ReactRoundedImage from "react-rounded-image";
 
@@ -161,6 +163,14 @@ const Header = ({
 
                         <li>
                           <Link style={{color:"white"}} to="/AdministrativeSummary" onClick={closeMenu}>Administrative Summary</Link>
+                        </li>
+
+                    )}
+                    {!isLoading && isAuthenticated &&
+                    (
+
+                        <li>
+                          <AddUserButtonTemp/>
                         </li>
 
                     )}
