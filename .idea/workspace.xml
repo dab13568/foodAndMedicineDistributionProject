@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="frontend-backend distibution" />
+    <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="frontend-backend distibution">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/FeaturesTiles.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/FeaturesTiles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/HelloUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/HelloUser.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,6 +50,7 @@
       <option name="presentableId" value="Default" />
       <updated>1629846882169</updated>
       <workItem from="1629846883588" duration="807000" />
+      <workItem from="1629848071113" duration="3975000" />
     </task>
     <task id="LOCAL‎00001" summary="frontend-backend distibution">
       <created>1629847584740</created>
@@ -68,6 +74,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="frontend-backend distibution" />

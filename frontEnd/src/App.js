@@ -30,7 +30,7 @@ function App () {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, );
 
-    const { user,isAuthenticated } = useAuth0();
+    const { user,isAuthenticated,isLoading } = useAuth0();
 
 
     return (
@@ -38,14 +38,17 @@ function App () {
       ref={childRef}
       children={() => (
           <Router>
-            <Switch>
-                {isAuthenticated && (
-                    <AppRoute exact path="/" component={HelloUser} layout={LayoutDefault} />
-
-                )}
-              <AppRoute exact path="/" component={Welcome} layout={LayoutDefault} />
-              <AppRoute exact path="/ShowMap" component={ShowMap} layout={LayoutDefault} />
-            </Switch>
+              {isAuthenticated && (
+                  <Switch>
+                      <AppRoute exact path="/" component={HelloUser} layout={LayoutDefault} />
+                      <AppRoute exact path="/ShowMap" component={ShowMap} layout={LayoutDefault} />
+                  </Switch>
+              )}
+              {!isAuthenticated && (
+                  <switch>
+                      <AppRoute exact path="/" component={Welcome} layout={LayoutDefault} />
+                  </switch>
+              )}
           </Router>
       )} />
   );
