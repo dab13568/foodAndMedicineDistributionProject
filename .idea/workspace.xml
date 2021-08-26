@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="frontend-backend distibution">
-      <change afterPath="$PROJECT_DIR$/backEnd/models/users.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backEnd/package-lock.json" afterDir="false" />
+    <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="user-create">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/bin/www" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backEnd/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/routes/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/elements/addUserTempButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/elements/addUserTempButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/HelloUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/HelloUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/layout/AddressDistributor.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/layout/AddressDistributor.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +100,19 @@
       <option name="presentableId" value="LOCAL‎00006" />
       <updated>1629920708850</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL‎00007" summary="user-create">
+      <created>1629932207862</created>
+      <option name="number" value="LOCAL‎00007" />
+      <option name="presentableId" value="LOCAL‎00007" />
+      <updated>1629932207862</updated>
+    </task>
+    <task id="LOCAL‎00008" summary="user-create">
+      <created>1629932597812</created>
+      <option name="number" value="LOCAL‎00008" />
+      <option name="presentableId" value="LOCAL‎00008" />
+      <updated>1629932597812</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +132,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="frontend-backend distibution" />
-    <option name="LAST_COMMIT_MESSAGE" value="frontend-backend distibution" />
+    <MESSAGE value="user-create" />
+    <option name="LAST_COMMIT_MESSAGE" value="user-create" />
   </component>
 </project>

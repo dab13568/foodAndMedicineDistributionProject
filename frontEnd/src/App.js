@@ -31,9 +31,24 @@ function App () {
   }, );
 
     const { user,isAuthenticated,isLoading } = useAuth0();
+    const getUserDetails= async()=>{
+        window.alert(user.sub)
+    const payload = { sub:user.sub}
 
+    await fetch('/users/get-user',{
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+    }).then(response => {
+        window.alert(response.json().toString())
 
+    }) }
+    getUserDetails()
     return (
+
     <ScrollReveal
       ref={childRef}
       children={() => (

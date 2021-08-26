@@ -13,6 +13,10 @@ router.post("/add-user", async function(req, res) {
   res.status(succeeded ? 200 : 400);
   res.send(massage);
 });
+router.post("/get-user", async function(req, res) {
+  let { user} = await usersModel.getUser(req.body.sub);
+  res.send(user);
+});
 module.exports = router;
 
 
