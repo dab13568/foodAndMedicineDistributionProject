@@ -14,7 +14,8 @@ export default class ShowMap extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value:"",
+            tempValue:"",
+            value:"הירדן,רמת גן",
             addresses: [], //the orginals address data
             tableaddresses: [], //the address from the data to display in the table
             users: [], //the orginals userws data
@@ -24,11 +25,15 @@ export default class ShowMap extends Component {
             group: [] //the location in groups after k-means
         };
         this.handleChange = this.handleChange.bind(this);
+        this.clicked = this.clicked.bind(this);
+
     }
     handleChange(event) {
-        this.setState({value: event.target.value});
+        this.setState({tempValue: event.target.value});
     }
-
+    clicked(){
+        this.setState((state)=>{return {value:state.tempValue}})
+    }
 
 
     render (){
@@ -36,17 +41,19 @@ export default class ShowMap extends Component {
             <div style={{marginTop:200}}>
                 <Container style={{width:"700px"}}>
                     <Row className="justify-content-md-center">
-                        <input type="text" value={this.state.value} onChange={this.handleChange} />
-
+                        <input type="text" value={this.state.tempValue} onChange={this.handleChange} />
+                    </Row>
+                    <Row className="justify-content-md-center">
+                        <button onClick={this.clicked}></button>
                     </Row>
                     <Row className="justify-content-md-center">
                         <button></button>
                     </Row>
-                    {/*<Row className="justify-content-md-center">*/}
-                    {/*    <Map*/}
-                    {/*        address={this.state.value}*/}
-                    {/*    />*/}
-                    {/*</Row>*/}
+                    <Row className="justify-content-md-center">
+                        <Map
+                           address={this.state.value}
+                        />
+                    </Row>
 
                 </Container>
             </div>
