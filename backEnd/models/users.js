@@ -143,9 +143,9 @@ module.exports.getAllUsers = async function() {
 }
 
 module.exports.getUser = async function(username) {
-    let user = await db.collection("users").findOne({ username: username })
+    let user = await db.collection("users").findOne({ Id: username })
+    console.log(user)
     return user
-
 }
 
 module.exports.removeUser = async function(username) {

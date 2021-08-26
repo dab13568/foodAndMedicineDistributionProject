@@ -9,10 +9,14 @@ import {
 } from "react-router-dom";
 
 import LayoutDefault from './layouts/LayoutDefault';
+import LayoutManager from './layouts/LayoutManager';
+
 import LayoutUser from './layouts/LayoutUser';
 
 import Welcome from './views/Welcome';
 import HelloUser from './components/sections/HelloUser';
+import HelloManager from './components/sections/HelloManager';
+
 import AddressDistributor from './components/layout/AddressDistributor';
 
 import Home from './views/Home';
@@ -32,7 +36,7 @@ function App () {
   }, );
 
 
-    const { isAuthenticated } = useAuth0();
+    const { isAuthenticated,user } = useAuth0();
 
     return (
 
@@ -46,7 +50,7 @@ function App () {
                       <AppRoute exact path="/" component={HelloUser} layout={LayoutDefault} />
                       <AppRoute exact path="/ShowMap" component={ShowMap} layout={LayoutDefault} />
                       <AppRoute exact path="/AddAddress" component={AddressDistributor}  />
-
+                      <AppRoute exact path="/Manager" component={HelloManager} layout={LayoutManager}  />
                   </Switch>
               )}
               {!isAuthenticated && (

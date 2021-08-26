@@ -14,7 +14,7 @@ const defaultProps = {
   ...SectionProps.defaults
 }
 
-const HelloUser = ({
+const HelloManager = ({
   className,
   topOuterDivider,
   bottomOuterDivider,
@@ -40,50 +40,9 @@ const HelloUser = ({
     bottomDivider && 'has-bottom-divider'
   );
 
-  let address=""
-  let type = ""
-  const checkNoAddress= ()=>{
-    if(address === "" && type !=="manager")
-    {
-      window.location.href = "/AddAddress"
-      return null;
-    }
-    if(type ==="manager")
-    {
-      window.location.href = "/Manager"
-      return null;
-    }
-  }
-
 
   const { user } = useAuth0();
-  useEffect(() => {
 
-        const getUserDetails= async()=>{
-
-          const payload = { sub:user.sub}
-          await fetch('/users/get-user',{
-            method: "POST",
-            body: JSON.stringify(payload),
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
-          }).then((response) => {
-            window.alert("in resp")
-
-            address = response.json()["address"]
-            type = response.json()[2]
-
-          }) }
-    getUserDetails().then(
-        checkNoAddress()
-
-    )
-
-
-  }
-);
 
   return (
     <section
@@ -99,8 +58,7 @@ const HelloUser = ({
             </h1>
             <div className="container-xs">
               <p className="m-0 mb-32 " data-reveal-delay="50">
-                We encourage you to read the administrative summary carefully.
-                Do not forget to divide your future divisions, if any!                </p>
+                As a manager, you can see the details of the distributors, place different distribution addresses, get optimal distribution areas, etc ...                </p>
             </div>
           </div>
 
@@ -110,7 +68,7 @@ const HelloUser = ({
   );
 }
 
-HelloUser.propTypes = propTypes;
-HelloUser.defaultProps = defaultProps;
+HelloManager.propTypes = propTypes;
+HelloManager.defaultProps = defaultProps;
 
-export default HelloUser;
+export default HelloManager;
