@@ -41,8 +41,28 @@ const HelloUser = ({
   );
 
   console.log("in hello user");
-  const { user } = useAuth0();
 
+  let address=""
+  let type = ""
+  const { user } = useAuth0();
+  const getUserDetails= async()=>{
+    const payload = { sub:user.sub}
+
+    await fetch('/users/get-user',{
+      method: "POST",
+      body: JSON.stringify(payload),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+    }).then(response => {
+      address = response.json()["address"]
+      type = response.json()["type"]
+
+    }) }
+  getUserDetails()
+  if(address == "" && type !="manager")
+    window.location.href = "/AddAddress"
 
   return (
     <section

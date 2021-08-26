@@ -13,6 +13,7 @@ import LayoutUser from './layouts/LayoutUser';
 
 import Welcome from './views/Welcome';
 import HelloUser from './components/sections/HelloUser';
+import AddressDistributor from './components/layout/AddressDistributor';
 
 import Home from './views/Home';
 import AddDist from './views/addDistributor';
@@ -30,33 +31,22 @@ function App () {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, );
 
-    const { user,isAuthenticated,isLoading } = useAuth0();
-    const getUserDetails= async()=>{
-        window.alert(user.sub)
-    const payload = { sub:user.sub}
 
-    await fetch('/users/get-user',{
-        method: "POST",
-        body: JSON.stringify(payload),
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-    }).then(response => {
-        window.alert(response.json().toString())
+    const { isAuthenticated } = useAuth0();
 
-    }) }
-    getUserDetails()
     return (
 
     <ScrollReveal
       ref={childRef}
       children={() => (
           <Router>
+
               {isAuthenticated && (
                   <Switch>
                       <AppRoute exact path="/" component={HelloUser} layout={LayoutDefault} />
                       <AppRoute exact path="/ShowMap" component={ShowMap} layout={LayoutDefault} />
+                      <AppRoute exact path="/AddAddress" component={AddressDistributor}  />
+
                   </Switch>
               )}
               {!isAuthenticated && (

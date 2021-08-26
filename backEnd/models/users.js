@@ -91,7 +91,7 @@ module.exports.getType = getType
 /**
  * Function that receives user data and adds it to DB
  */
-module.exports.addUser = async function(id,type,city,street) {
+module.exports.addUser = async function(id,type,address) {
     let username = id;
     console.log(username);
     // check if the user name already exist
@@ -102,8 +102,7 @@ module.exports.addUser = async function(id,type,city,street) {
     await db.collection("users").insertOne({
         "Id": username,
         "type": type,
-        "city": city,
-        "street": street,
+        "address": address,
         "phone": ""
     });
 

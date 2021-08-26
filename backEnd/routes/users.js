@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
 router.post("/add-user", async function(req, res) {
   console.log("הגעתיייייי");
-  let { massage, succeeded } = await usersModel.addUser(req.body.sub,req.body.type,req.body.city,req.body.street);
+  let { massage, succeeded } = await usersModel.addUser(req.body.sub,req.body.type,req.body.address);
   res.status(succeeded ? 200 : 400);
   res.send(massage);
 });
