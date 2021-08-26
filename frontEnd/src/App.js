@@ -16,6 +16,7 @@ import LayoutUser from './layouts/LayoutUser';
 import Welcome from './views/Welcome';
 import HelloUser from './components/sections/HelloUser';
 import HelloManager from './components/sections/HelloManager';
+import AllDistributors from './components/sections/AllDistributors';
 
 import AddressDistributor from './components/layout/AddressDistributor';
 
@@ -51,6 +52,8 @@ function App () {
                       <AppRoute exact path="/ShowMap" component={ShowMap} layout={LayoutDefault} />
                       <AppRoute exact path="/AddAddress" component={AddressDistributor}  />
                       <AppRoute exact path="/Manager" component={HelloManager} layout={LayoutManager}  />
+                      <AppRoute exact path="/temp" component={AllDistributors} layout={LayoutManager}  />
+
                   </Switch>
               )}
               {!isAuthenticated && (

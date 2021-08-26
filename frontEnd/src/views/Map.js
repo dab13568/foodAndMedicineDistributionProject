@@ -42,7 +42,8 @@ export default class Maps extends Component {
     });*/
   };
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps)
+  {
 
 
         if (this.props.address && this.props.address !== prevProps.address) {

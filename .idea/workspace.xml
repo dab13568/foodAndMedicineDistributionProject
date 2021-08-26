@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="user-create">
+    <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="frontend-backend distibution">
+      <change afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/AllDistributors.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/AllDistributors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/routes/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backEnd/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/models/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/HelloUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/HelloUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/Hero.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/Hero.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/layouts/LayoutManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/layouts/LayoutManager.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/src/views/Map.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/views/Map.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -35,6 +41,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../webProject" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
@@ -63,7 +70,8 @@
       <workItem from="1629846883588" duration="807000" />
       <workItem from="1629848071113" duration="5682000" />
       <workItem from="1629896119062" duration="10436000" />
-      <workItem from="1629977516439" duration="18799000" />
+      <workItem from="1629977516439" duration="10768000" />
+      <workItem from="1630008645386" duration="6501000" />
     </task>
     <task id="LOCAL‎00001" summary="frontend-backend distibution">
       <created>1629847584740</created>
@@ -125,13 +133,7 @@
       <option name="presentableId" value="LOCAL‎00010" />
       <updated>1629939781631</updated>
     </task>
-    <task id="LOCAL‎00011" summary="user-create">
-      <created>1629992172282</created>
-      <option name="number" value="LOCAL‎00011" />
-      <option name="presentableId" value="LOCAL‎00011" />
-      <updated>1629992172282</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
