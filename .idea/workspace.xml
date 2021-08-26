@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="frontend-backend distibution">
+    <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="user-create">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/models/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/routes/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/src/components/layout/AddressDistributor.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/layout/AddressDistributor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/HelloUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/HelloUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/views/Map.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/views/Map.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +35,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../webProject" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -64,7 +61,7 @@
       <updated>1629846882169</updated>
       <workItem from="1629846883588" duration="807000" />
       <workItem from="1629848071113" duration="5682000" />
-      <workItem from="1629896119062" duration="16758000" />
+      <workItem from="1629896119062" duration="10436000" />
     </task>
     <task id="LOCAL‎00001" summary="frontend-backend distibution">
       <created>1629847584740</created>
@@ -102,13 +99,25 @@
       <option name="presentableId" value="LOCAL‎00006" />
       <updated>1629920708850</updated>
     </task>
-    <task id="LOCAL‎00007" summary="frontend-backend distibution">
-      <created>1629922180014</created>
+    <task id="LOCAL‎00007" summary="user-create">
+      <created>1629932207862</created>
       <option name="number" value="LOCAL‎00007" />
       <option name="presentableId" value="LOCAL‎00007" />
-      <updated>1629922180014</updated>
+      <updated>1629932207862</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL‎00008" summary="user-create">
+      <created>1629932597812</created>
+      <option name="number" value="LOCAL‎00008" />
+      <option name="presentableId" value="LOCAL‎00008" />
+      <updated>1629932597812</updated>
+    </task>
+    <task id="LOCAL‎00009" summary="user-create">
+      <created>1629936766943</created>
+      <option name="number" value="LOCAL‎00009" />
+      <option name="presentableId" value="LOCAL‎00009" />
+      <updated>1629936766943</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +137,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="frontend-backend distibution" />
-    <option name="LAST_COMMIT_MESSAGE" value="frontend-backend distibution" />
+    <MESSAGE value="user-create" />
+    <option name="LAST_COMMIT_MESSAGE" value="user-create" />
   </component>
 </project>
