@@ -3,6 +3,7 @@ import {Map, TileLayer, Marker, Popup} from "react-leaflet";
 import Loc from "./LocationIQ";
 import "./Map.css";
 import getIcon from "./MapIcons";
+import LocationIQ from 'react-native-locationiq';
 
 export default class Maps extends Component {
   state = {
@@ -42,7 +43,7 @@ export default class Maps extends Component {
   };
 
   componentDidUpdate(prevProps) {
-      try {
+
 
         if (this.props.address && this.props.address !== prevProps.address) {
 
@@ -56,12 +57,10 @@ export default class Maps extends Component {
               lat: json[0].lat,
               lng: json[0].lon
             })
-          })
+          }).catch(error => window.alert("error"));
         }
-      }
-      catch (error){
-          window.alert("illegal address")
-        }
+
+
 
 
         //var arr = [];*/

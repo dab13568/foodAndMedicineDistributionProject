@@ -17,7 +17,7 @@ router.post("/get-user", async function(req, res) {
   console.log("gfdfgjfdekjrtghnfmjrtghbnfmjrthgbn")
   let user = await usersModel.getUser(req.body.sub);
   console.log(req.body.sub);
-  res.send(user.Id);
+  res.send(user);
 });
 module.exports = router;
 

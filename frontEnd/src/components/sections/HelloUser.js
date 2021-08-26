@@ -40,9 +40,29 @@ const HelloUser = ({
     bottomDivider && 'has-bottom-divider'
   );
 
-  let address=""
-  let type = ""
-  const checkNoAddress= ()=>{
+
+
+
+
+  const { user } = useAuth0();
+  const payload = { sub:user.sub}
+
+  useEffect(async() => {
+
+
+          const answer=await fetch('/users/get-user',{
+            method: "POST",
+            body: JSON.stringify(payload),
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+          });
+          const data=await answer.json();
+          let address=data.address;
+          let type=data.type;
+
+
     if(address === "" && type !=="manager")
     {
       window.location.href = "/AddAddress"
@@ -53,37 +73,9 @@ const HelloUser = ({
       window.location.href = "/Manager"
       return null;
     }
-  }
 
 
-  const { user } = useAuth0();
-  useEffect(() => {
-
-        const getUserDetails= async()=>{
-
-          const payload = { sub:user.sub}
-          await fetch('/users/get-user',{
-            method: "POST",
-            body: JSON.stringify(payload),
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
-          }).then((response) => {
-            window.alert("in resp")
-
-            address = response.json()["address"]
-            type = response.json()[2]
-
-          }) }
-    getUserDetails().then(
-        checkNoAddress()
-
-    )
-
-
-  }
-);
+  },[]);
 
   return (
     <section
