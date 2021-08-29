@@ -25,7 +25,7 @@ export default class Maps extends Component {
   async addUserWithAddress()
   {
     window.alert("in add user")
-    const payload = { sub:this.props.userSub,type:this.props.type,address:this.props.address,phone:this.props.phone}
+    const payload = { sub:this.props.userSub,type:this.props.type,address:this.props.address,phone:this.props.phone,name:this.props.name}
     const answer=await fetch('/users/add-user', {
       method: "POST",
       body: JSON.stringify(payload),

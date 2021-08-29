@@ -100,6 +100,7 @@ const ShowMap = ({
                                         type={"Distributor"}
                                         address={val}
                                         phone={user.phone_number}
+                                        name={user.name}
                                         SaveAddress={addAddressButton}
                                         searchButton={searchButton}
                                     />

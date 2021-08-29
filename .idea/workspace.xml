@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="frontend-backend distibution">
+    <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="add address for new user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backEnd/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/models/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backEnd/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/routes/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/src/components/layout/AddressDistributor.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/layout/AddressDistributor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/layout/HeaderManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/layout/HeaderManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/HelloUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/HelloUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/AllDistributors.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/AllDistributors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/src/views/Map.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/views/Map.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +70,8 @@
       <workItem from="1629896119062" duration="10436000" />
       <workItem from="1629977516439" duration="10768000" />
       <workItem from="1630008645386" duration="12861000" />
-      <workItem from="1630181770369" duration="13997000" />
+      <workItem from="1630181770369" duration="16266000" />
+      <workItem from="1630240850304" duration="4963000" />
     </task>
     <task id="LOCAL‎00001" summary="frontend-backend distibution">
       <created>1629847584740</created>
@@ -140,7 +139,13 @@
       <option name="presentableId" value="LOCAL‎00011" />
       <updated>1630015398740</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL‎00012" summary="add address for new user">
+      <created>1630196605462</created>
+      <option name="number" value="LOCAL‎00012" />
+      <option name="presentableId" value="LOCAL‎00012" />
+      <updated>1630196605462</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +166,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="user-create" />
     <MESSAGE value="frontend-backend distibution" />
-    <option name="LAST_COMMIT_MESSAGE" value="frontend-backend distibution" />
+    <MESSAGE value="add address for new user" />
+    <option name="LAST_COMMIT_MESSAGE" value="add address for new user" />
   </component>
 </project>

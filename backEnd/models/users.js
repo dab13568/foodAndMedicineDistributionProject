@@ -91,7 +91,7 @@ module.exports.getType = getType
 /**
  * Function that receives user data and adds it to DB
  */
-module.exports.addUser = async function(id,type,address,phone)
+module.exports.addUser = async function(id,type,address,phone,name)
 {
     let username = id;
     console.log(username);
@@ -104,7 +104,8 @@ module.exports.addUser = async function(id,type,address,phone)
         "Id": username,
         "type": type,
         "address": address,
-        "phone": phone
+        "phone": phone,
+        "name":name
     });
 
     return { massage: "User added successfully!", succeeded: true };
@@ -136,11 +137,11 @@ module.exports.updateUser = async function(username, newType) {
         succeeded = false;
         message = reason;
     });
-    return { message: message, succeeded: succeeded };;
+    return { message: message, succeeded: succeeded };
 }
 
 module.exports.getAllUsers = async function() {
-    return db.collection("users").find().toArray();
+    return  db.collection("users").find({type: "Distributor"}).toArray();
 }
 
 module.exports.getUser = async function(username) {

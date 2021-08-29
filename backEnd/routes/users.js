@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
 router.post("/add-user", async function(req, res) {
   console.log("הגעתיייייי");
-  let { massage, succeeded } = await usersModel.addUser(req.body.sub,req.body.type,req.body.address,req.body.phone);
+  let { massage, succeeded } = await usersModel.addUser(req.body.sub,req.body.type,req.body.address,req.body.phone,req.body.name);
   res.status(succeeded ? 200 : 400);
   res.send(succeeded);
 });
@@ -20,6 +20,12 @@ router.post("/get-user", async function(req, res) {
   console.log(req.body.sub);
   res.send(user);
 });
+
+router.post("/get-all-users", async function(req, res) {
+  let users = await usersModel.getAllUsers();
+  res.send(users);
+});
+
 module.exports = router;
 
 
