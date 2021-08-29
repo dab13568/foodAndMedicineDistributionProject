@@ -1,9 +1,12 @@
-import React, {Component} from "react";
+import React, {Component } from "react";
 import {Map, TileLayer, Marker, Popup} from "react-leaflet";
+import { useHistory } from "react-router-dom";
+
 import Loc from "./LocationIQ";
 import "./Map.css";
 import getIcon from "./MapIcons";
 import LocationIQ from 'react-native-locationiq';
+import {win} from "leaflet/src/core/Browser";
 
 export default class Maps extends Component {
   state = {
@@ -12,75 +15,70 @@ export default class Maps extends Component {
     zoom: 14,
     locations: [],
     group: [],
-    activeMark: null
+    activeMark: null,
+    legalAddress:false,
+    didOnce:false
   };
 
-  componentDidMount = () => {
-    /*console.log(this.props.address)
-    Loc.search(this.props.address).then(json => {
-      if (json[0].error ==="Unable to geocode")
-         window.alert("illegal address");
-      else
+
+
+  async addUserWithAddress()
+  {
+    window.alert("in add user")
+    const payload = { sub:this.props.userSub,type:this.props.type,address:this.props.address,phone:this.props.phone}
+    const answer=await fetch('/users/add-user', {
+      method: "POST",
+      body: JSON.stringify(payload),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+    });
+
+    if(answer.status == 200)
+    {
+      window.alert("המשתמש נוסף בהצלחה")
+      window.location.href= "/"
+    }
+    else
+      window.alert("שגיאה בהוספת המשתמש")
+  }
+
+
+
+  async componentDidUpdate(prevProps)
+  {
+    if ((this.props.address && this.props.address !== prevProps.address))
+    {
+     this.state.legalAddress=false
+
+      await Loc.search(this.props.address).then(json =>
+      {
         this.setState({
           lat: json[0].lat,
           lng: json[0].lon
         })
-            //console.log("lat: "+this.state.lat+"lng: "+this.state.lng)
+        window.alert(this.props.userSub+"כתובת חוקית ")
+        this.state.legalAddress = true;
+        this.state.didOnce=false
 
-    });
 
-    var locations = [];
-    console.log(this.props);
-    if (this.props.locations && this.props.locations.length > 0) {
-      this.props.locations.forEach((item, i) => {
-        locations.push([item, i]);
-      });
-      console.log("this is:", locations);
+
+      }).catch(error => window.alert("error"));
+
+
     }
-    this.setState({
-      locations: locations
-    });*/
-  };
+    if(!this.state.legalAddress && this.props.SaveAddress && !this.state.didOnce)
+    {
+      this.state.didOnce=true
+      window.alert("please enter valid address")
 
-  componentDidUpdate(prevProps)
-  {
-
-
-        if (this.props.address && this.props.address !== prevProps.address) {
-
-          Loc.search(this.props.address).then(json => {
-            console.log("-------------------")
-            if (json["code"] === "4")
-              window.alert("illegal address");
-            if (json[0].error === "Unable to geocode")
-              window.alert("illegal address");
-            this.setState({
-              lat: json[0].lat,
-              lng: json[0].lon
-            })
-          }).catch(error => window.alert("error"));
-        }
-
-
-
-
-        //var arr = [];*/
-      /*this.props.group.map((group, j) =>
-          group.locations.cluster.forEach((item, i) => {
-          arr.push({
-            cordinate: item,
-            key: group.locations.clusterInd[i],
-            groupKey: j,
-            user: group.user
-          });
-          return;
-        })
-      );*/
-      /*this.setState({
-        lat: this.props.lat,
-        lng: this.props.lng
-      });*/
-
+    }
+    if(this.props.SaveAddress && this.state.legalAddress)
+    {
+      this.state.didOnce=true
+      await this.addUserWithAddress()
+    }
 
   }
 

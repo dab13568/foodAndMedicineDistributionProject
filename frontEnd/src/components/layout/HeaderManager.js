@@ -60,7 +60,7 @@ const Header = ({
     nav.current.style.maxHeight = nav.current.scrollHeight + 'px';
     setIsactive(true);
   }
-
+let f=""
   const closeMenu = () => {
     document.body.classList.remove('off-nav-is-active');
     nav.current && (nav.current.style.maxHeight = null);

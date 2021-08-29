@@ -9,10 +9,11 @@ router.get('/', function(req, res, next) {
 
 router.post("/add-user", async function(req, res) {
   console.log("הגעתיייייי");
-  let { massage, succeeded } = await usersModel.addUser(req.body.sub,req.body.type,req.body.address);
+  let { massage, succeeded } = await usersModel.addUser(req.body.sub,req.body.type,req.body.address,req.body.phone);
   res.status(succeeded ? 200 : 400);
-  res.send(massage);
+  res.send(succeeded);
 });
+
 router.post("/get-user", async function(req, res) {
   console.log("gfdfgjfdekjrtghnfmjrtghbnfmjrthgbn")
   let user = await usersModel.getUser(req.body.sub);

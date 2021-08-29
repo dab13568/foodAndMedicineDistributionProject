@@ -79,9 +79,9 @@ module.exports.login = async function(username, password) {
  */
 async function getType(username) {
     // search the user name in th DB and return his type
-    let user = await db.collection("users").findOne({ "username": username });
+    let user = await db.collection("users").findOne({ "Id": username });
 
-    if (user !== null && user.username === username && user.active) {
+    if (user !== null && user.Id === username ) {
         return user.type;
     }
     return undefined;
@@ -91,7 +91,8 @@ module.exports.getType = getType
 /**
  * Function that receives user data and adds it to DB
  */
-module.exports.addUser = async function(id,type,address) {
+module.exports.addUser = async function(id,type,address,phone)
+{
     let username = id;
     console.log(username);
     // check if the user name already exist
@@ -103,7 +104,7 @@ module.exports.addUser = async function(id,type,address) {
         "Id": username,
         "type": type,
         "address": address,
-        "phone": ""
+        "phone": phone
     });
 
     return { massage: "User added successfully!", succeeded: true };

@@ -5,6 +5,7 @@ import ButtonGroup from '../elements/ButtonGroup';
 import Button from '../elements/Button';
 import Image from '../elements/Image';
 import {useAuth0} from "@auth0/auth0-react";
+import {win} from "leaflet/src/core/Browser";
 
 const propTypes = {
   ...SectionProps.types
@@ -48,8 +49,6 @@ const HelloUser = ({
   const payload = { sub:user.sub}
 
   useEffect(async() => {
-
-
           const answer=await fetch('/users/get-user',{
             method: "POST",
             body: JSON.stringify(payload),
@@ -59,8 +58,12 @@ const HelloUser = ({
             },
           });
           const data=await answer.json();
-          let address=data.address;
-          let type=data.type;
+    if(data == null)
+      window.location.href = "/AddAddress"
+
+    let address=data.address;
+    let type=data.type;
+
 
 
     if(address === "" && type !=="manager")
