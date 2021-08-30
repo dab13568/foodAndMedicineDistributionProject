@@ -13,7 +13,18 @@ router.post("/add-user", async function(req, res) {
   res.status(succeeded ? 200 : 400);
   res.send(succeeded);
 });
+router.post("/update-user", async function(req, res) {
+  let message="good"
+  for (let item in req.body)
+  {
+  let answer = await usersModel.updateUser(item,req.body[item]);
+  if(answer.succeeded===false)
+    message="bad"
+  //console.log(req.body.sub);
+}
+  res.send(message);
 
+});
 router.post("/get-user", async function(req, res) {
   console.log("gfdfgjfdekjrtghnfmjrtghbnfmjrthgbn")
   let user = await usersModel.getUser(req.body.sub);

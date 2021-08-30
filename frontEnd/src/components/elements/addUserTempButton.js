@@ -15,7 +15,7 @@ const AddUserButtonTemp = () => {
             user.city="רמת גן"
             user.street="הירדן"
             user.type="manager"
-            const payload = { sub:user.sub,type:user.type, city:user.city,street:user.street}
+            const payload = { sub:user.sub,name: user.name,type:user.type, city:user.city,street:user.street}
 
             await fetch('/users/add-user',{
                 method: "POST",

@@ -105,7 +105,8 @@ module.exports.addUser = async function(id,type,address,phone,name)
         "type": type,
         "address": address,
         "phone": phone,
-        "name":name
+        "name":name,
+        "daysInWeek":""
     });
 
     return { massage: "User added successfully!", succeeded: true };
@@ -113,25 +114,27 @@ module.exports.addUser = async function(id,type,address,phone,name)
 
 
 
-module.exports.updateUser = async function(username, newType) {
-    let oldType = await getType(username);
+module.exports.updateUser = async function(id,value) {
+    //let oldType = await getType(username);
 
     let succeeded = true,
         message = "User updated successfully!"
-    // if the user dont in the DB return false
-    if (oldType === undefined)
-        return false;
 
-    let user = await this.getUser(username);
-    await db.collection("users").findOneAndUpdate({ "username": user.username }, {
+    /*db.collection.updateOne({ Id: sub }, { $set: "daysInWeek": daysInWeek }, (error, result) => {
+        if (error) throw error;
+        // send back entire updated list, to make sure frontend data is up-to-date
+        db.collection.find().toArray(function (_error, _result) {
+            if (_error) throw _error;
+            response.json(_result);
+        });
+    });*/
+
+
+    //let user = await this.getUser(username);
+    await db.collection("users").findOneAndUpdate({ "Id": id }, {
         $set: {
-            "firstName": user.firstName,
-            "lastName": user.lastName,
-            "username": user.username,
-            "password": user.password,
-            "type": newType,
-            "image": user.image,
-            "active": true
+            "daysInWeek": value,
+
         }
     }).catch(reason => {
         succeeded = false;

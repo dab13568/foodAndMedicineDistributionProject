@@ -99,6 +99,7 @@ const ShowMap = ({
                                 <Row className="justify-content-md-center">
                                     <Map
                                         userSub={user.sub}
+
                                         type={"Distributor"}
                                         address={val}
                                         phone={user.phone_number}
