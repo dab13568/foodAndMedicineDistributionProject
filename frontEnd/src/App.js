@@ -21,7 +21,6 @@ import AllDistributors from './components/sections/AllDistributors';
 import AddressDistributor from './components/layout/AddressDistributor';
 
 import Home from './views/Home';
-import AddDist from './views/addDistributor';
 import ShowMap from './views/ShowMap';
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -49,7 +48,7 @@ function App () {
               {isAuthenticated && (
                   <Switch>
                       <AppRoute exact path="/" component={HelloUser} layout={LayoutDefault} />
-                      <AppRoute exact path="/ShowMap" component={ShowMap} layout={LayoutDefault} />
+                      <AppRoute exact path="/ShowMap" component={ShowMap} layout={LayoutManager} />
                       <AppRoute exact path="/AddAddress" component={AddressDistributor}  />
                       <AppRoute exact path="/Manager" component={HelloManager} layout={LayoutManager}  />
                       <AppRoute exact path="/DistributorsDetails" component={AllDistributors} layout={LayoutManager}  />

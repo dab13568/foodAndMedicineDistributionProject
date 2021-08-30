@@ -8,11 +8,56 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Select from "react-select";
 import Button from "react-bootstrap/Button";
+import {SectionProps} from "../utils/SectionProps";
+import classNames from "classnames";
 
+const ShowMap =
+    ({
+         className,
+         topOuterDivider,
+         bottomOuterDivider,
+         topDivider,
+         bottomDivider,
+         hasBgColor,
+         invertColor,
+         ...props
+     }) => {
 
+    const outerClasses = classNames(
+        'hero section center-content',
+        topOuterDivider && 'has-top-divider',
+        bottomOuterDivider && 'has-bottom-divider',
+        hasBgColor && 'has-bg-color',
+        invertColor && 'invert-color',
+        className
+    );
 
+    const innerClasses = classNames(
+        'hero-inner section-inner',
+        topDivider && 'has-top-divider',
+        bottomDivider && 'has-bottom-divider'
+    );
 
-export default class ShowMap extends Component {
+    return(
+        <section
+            {...props}
+            className={outerClasses}>
+
+            <div className="container-sm">
+                <div className={innerClasses}>
+                    <div className="hero-content">
+                        <h1 className="mt-0 mb-16 ">
+                            Welcome back <span className="text-color-primary">hello!</span>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default ShowMap
+/*export default class ShowMap extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -28,7 +73,6 @@ export default class ShowMap extends Component {
 
 
 render (){
-    console.log("kuku");
         return(
             <div style={{marginTop:200}}>
             <Container style={{width:"700px"}}>
@@ -45,3 +89,5 @@ render (){
     }
 
 }
+
+ */

@@ -4,6 +4,14 @@ import { SectionProps } from '../../utils/SectionProps';
 import './AllDistributors.css';
 import classNames from "classnames";
 import {useAuth0} from "@auth0/auth0-react";
+import {win} from "leaflet/src/core/Browser";
+import Select from 'react-select';
+import makeAnimated from 'react-select/animated';
+import {
+    SortableContainer,
+    SortableElement,
+    sortableHandle,
+} from 'react-sortable-hoc';
 
 // This holds a list of some fiction people
 // Some  have the same name but different age and id
@@ -56,7 +64,7 @@ const AllDistributors= ({
 
         if (keyword !== '') {
             const results = USERS.filter((User) => {
-                return User.name.toLowerCase().startsWith(keyword.toLowerCase());
+                return User.name.toLowerCase().startsWith(keyword.toLowerCase()) || User.address.toLowerCase().startsWith(keyword.toLowerCase());
                 // Use the toLowerCase() method to make it case-insensitive
             });
             setFoundUsers(results);
@@ -70,10 +78,13 @@ const AllDistributors= ({
 
 
 
+    const animatedComponents = makeAnimated();
+
     const { user } = useAuth0();
 
-    useEffect(async() => {
 
+    useEffect(() => {
+        (async () => {
         const answer = await fetch('/users/get-all-users', {
             method: "POST",
             body:"",
@@ -82,17 +93,49 @@ const AllDistributors= ({
                 'Content-Type': 'application/json'
             },
         });
-        window.alert(answer.status)
         const data = await answer.json();
         if (data !== null)
         {
             setUSERS(data);
-            let address = data[0].address;
-            window.alert(address)
-            //let type = data.type;
+            setFoundUsers(data)
         }
 
-    },[]);
+        })();
+    }, []);
+
+    const options = [
+        { value: '0', label: 'Sunday' },
+        { value: '1', label: 'Monday' },
+        { value: '2', label: 'Tuesday' },
+        { value: '3', label: 'Wednesday' },
+        { value: '4', label: 'Thursday' },
+        { value: '5', label: 'Friday' }
+    ]
+    const [selected, setSelected] = useState([
+
+    ]);
+    const [currentId, setCurrentId] = useState("");
+    const [jsonUpdateDays,setjsonUpdateDays] = useState({});
+
+    const onChange = selectedOptions => setSelected(selectedOptions)
+
+    useEffect(() => {
+        const daysArray = selected.filter(x => x!==undefined);
+        const daysArrays = daysArray.map(x => x.value);
+
+        if(jsonUpdateDays[currentId]===undefined)
+        {
+            window.alert("undifined id "+currentId)
+        }
+
+
+        if(currentId!=="")
+            setjsonUpdateDays(prevPersonInfo => ({...prevPersonInfo, [currentId]: daysArrays}))
+
+    }, [selected,currentId]);
+
+
+
 
     return (
         <section
@@ -109,20 +152,37 @@ const AllDistributors= ({
                             className="input"
                             placeholder="Filter"
                         />
-
                         <div className="user-list">
-                            {foundUsers && foundUsers.length > 0 ? (
-                                foundUsers.map((User) => (
-                                    <li key={User.id} className="user">
-                                        <span className="user-id">{User.address}</span>
-                                        <span className="user-name">{User.name}</span>
-                                        <span className="user-age">{User.age} year old</span>
+                        {foundUsers && foundUsers.length > 0 ? (
+                            foundUsers.map((User) => (
+                                <ul key={User.Id} className="user">
+                                    <li >
+                                        <span className="user-name">{User.name}  </span>
                                     </li>
-                                ))
-                            ) : (
-                                <h1>No results found!</h1>
-                            )}
-                        </div>
+                                    <li>
+                                        <span className="user-id">  {User.address}</span>
+                                    </li>
+
+                                    <li>
+                                        <span style={{color:"black"}} >Days work: </span>
+                                        <Select style={{width:700}}
+                                                closeMenuOnSelect={false}
+                                                components={animatedComponents}
+                                                isMulti
+                                                defaultValue={options[0]}
+                                                options={options}
+                                                onChange={(e) => {
+                                                    onChange(e);
+                                                    setCurrentId(User.Id)
+                                                }}
+                                        />
+                                    </li>
+                                </ul>
+                            ))
+                        ) : (
+                            <h1>No results found!</h1>
+                        )}
+                    </div>
                     </div>
                 </div>
             </div>

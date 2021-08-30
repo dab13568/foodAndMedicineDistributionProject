@@ -48,37 +48,39 @@ const HelloUser = ({
   const { user } = useAuth0();
   const payload = { sub:user.sub}
 
-  useEffect(async() => {
-          const answer=await fetch('/users/get-user',{
-            method: "POST",
-            body: JSON.stringify(payload),
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
-          });
-          const data=await answer.json();
-    if(data == null)
-      window.location.href = "/AddAddress"
+  useEffect(() => {
+    (async () => {
 
-    let address=data.address;
-    let type=data.type;
+      const answer=await fetch('/users/get-user',{
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+      });
+      const data=await answer.json();
+      if(data == null)
+        window.location.href = "/AddAddress"
 
-
-
-    if(address === "" && type !=="manager")
-    {
-      window.location.href = "/AddAddress"
-      return null;
-    }
-    if(type ==="manager")
-    {
-      window.location.href = "/Manager"
-      return null;
-    }
+      let address=data.address;
+      let type=data.type;
 
 
-  },[]);
+
+      if(address === "" && type !=="manager")
+      {
+        window.location.href = "/AddAddress"
+        return null;
+      }
+      if(type ==="manager")
+      {
+        window.location.href = "/Manager"
+        return null;
+      }
+    })();
+  }, []);
+
 
   return (
     <section

@@ -49,6 +49,8 @@ const ShowMap = ({
     const [searchButton,setsearchButton] = useState(false);
     const [addAddressButton,setaddAddressButton] = useState(false);
 
+
+
     function handleChange(event)
     {
         settempValue(event.target.value);
@@ -87,7 +89,7 @@ const ShowMap = ({
                             </p>
                         </div>
                         <div >
-                            <Container style={{width:"700px"}}>
+                            <Container style={{width:"300px"}}>
                                 <Row className="justify-content-md-center">
                                     <input type="text"  onChange={handleChange} />
                                     <button><img style={{ width:20,height:20}} src={"https://www.pngitem.com/pimgs/m/47-474460_search-button-logo-png-transparent-png.png"} onClick={SearchButton}/></button>

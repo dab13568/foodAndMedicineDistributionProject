@@ -83,7 +83,7 @@ let f=""
     bottomOuterDivider && 'has-bottom-divider',
     className
   );
-  const { loginWithRedirect,isAuthenticated,isLoading,user } = useAuth0();
+  const { isAuthenticated,isLoading,user } = useAuth0();
 
 
   return (
