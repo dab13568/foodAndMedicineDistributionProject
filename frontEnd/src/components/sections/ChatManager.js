@@ -34,7 +34,7 @@ import {
 // ];
 
 
-const AllDistributors= ({
+const ChatManager= ({
                             className,
                             topOuterDivider,
                             bottomOuterDivider,
@@ -68,7 +68,7 @@ const AllDistributors= ({
 
         if (keyword !== '') {
             const results = USERS.filter((User) => {
-                return User.name.toLowerCase().startsWith(keyword.toLowerCase()) || User.address.toLowerCase().startsWith(keyword.toLowerCase());
+                return User.name.toLowerCase().startsWith(keyword.toLowerCase());
                 // Use the toLowerCase() method to make it case-insensitive
             });
             setFoundUsers(results);
@@ -85,8 +85,7 @@ const AllDistributors= ({
     const animatedComponents = makeAnimated();
 
     const { user } = useAuth0();
-    const [showbutton,setShowButton]=useState(true)
-    const [showLoading,setshowLoading]=useState(false)
+
 
 
     useEffect(() => {
@@ -119,25 +118,21 @@ const AllDistributors= ({
         { value: 4, label: 'Thursday' },
         { value: 5, label: 'Friday' }
     ]
-    const [selected, setSelected] = useState([]);
     const [currentId, setCurrentId] = useState("");
     const [jsonUpdateDays,setjsonUpdateDays] = useState({});
 
-    const onChange = selectedOptions => setSelected(selectedOptions)
 
     useEffect(() => {
-        const daysArray = selected.filter(x => x!==undefined);
-        const daysArrays = daysArray.map(x => x.value);
+        //
+        //
+        // if(currentId!=="")
+        //     setjsonUpdateDays(prevPersonInfo => ({...prevPersonInfo, [currentId]: daysArrays}))
 
-        if(currentId!=="")
-            setjsonUpdateDays(prevPersonInfo => ({...prevPersonInfo, [currentId]: daysArrays}))
-
-    }, [selected,currentId]);
+    }, [currentId]);
 
     async function onClick()
     {
-        setShowButton(false)
-        setshowLoading(true)
+
         if(jsonUpdateDays!=={})
         {
             const answer=await fetch('/users/update-user',{
@@ -149,8 +144,6 @@ const AllDistributors= ({
                 },
             });
 
-            setShowButton(true)
-            setshowLoading(false)
 
             if(answer.status===200)
                 window.alert("The changes were made successfully!")
@@ -170,12 +163,7 @@ const AllDistributors= ({
             <div className="container-sm">
                 <div className={innerClasses}>
                     <div >
-                        {showbutton &&
-                        <Button onClick={onClick} style={{marginRight:100,backgroundColor: "#6163ff",color: "white"}}>Save Changes</Button>
-                        }
-                        {showLoading &&
-                        <span style={{color:"white"}} >Loading... </span>
-                        }
+
                         <input
                             type="search"
                             value={name}
@@ -189,25 +177,9 @@ const AllDistributors= ({
                             foundUsers.map((User) => (
                                 <ul key={User.Id} className="user">
                                     <li >
-                                        <span className="user-name">{User.name}  </span>
-                                    </li>
-                                    <li>
-                                        <span className="user-id">  {User.address}</span>
+                                        <button className="user-name">{User.name}   </button>
                                     </li>
 
-                                    <li>
-                                        <span style={{color:"black"}} >Days work: </span>
-                                        <Select style={{width:700}}
-                                                components={animatedComponents}
-                                                isMulti
-                                                defaultValue={  User.daysInWeek.map(x=>options[x])}
-                                                options={options}
-                                                onChange={(e) => {
-                                                    onChange(e);
-                                                    setCurrentId(User.Id)
-                                                }}
-                                        />
-                                    </li>
                                 </ul>
                             ))
                         ) : (
@@ -223,4 +195,4 @@ const AllDistributors= ({
 
 }
 
-export default AllDistributors;
+export default ChatManager;

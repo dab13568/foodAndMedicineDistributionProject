@@ -58,7 +58,7 @@ const HelloManager = ({
             </h1>
             <div className="container-xs">
               <p className="m-0 mb-32 " data-reveal-delay="50">
-                As a manager, you can see the details of the distributors, place different distribution addresses, get optimal distribution areas, etc ...                </p>
+                As a manager, you can see the details of the distributors, place different distribution addresses, get optimal distribution areas. dont forget to write the daily blog!               </p>
             </div>
           </div>
 

@@ -17,6 +17,10 @@ import Welcome from './views/Welcome';
 import HelloUser from './components/sections/HelloUser';
 import HelloManager from './components/sections/HelloManager';
 import AllDistributors from './components/sections/AllDistributors';
+import ChatManager from './components/sections/ChatManager';
+
+import SummaryManager from './components/sections/SummaryManager';
+
 import AddressesManagement from './components/sections/addressesManagement';
 import AddressDistributor from './components/layout/AddressDistributor';
 
@@ -48,11 +52,12 @@ function App () {
               {isAuthenticated && (
                   <Switch>
                       <AppRoute exact path="/" component={HelloUser} layout={LayoutDefault} />
-                      <AppRoute exact path="/ShowMap" component={ShowMap} layout={LayoutManager} />
+                      <AppRoute exact path="/SummaryConclusionManager" component={SummaryManager} layout={LayoutManager} />
                       <AppRoute exact path="/AddAddress" component={AddressDistributor}  />
                       <AppRoute exact path="/Manager" component={HelloManager} layout={LayoutManager}  />
                       <AppRoute exact path="/DistributorsDetails" component={AllDistributors} layout={LayoutManager}  />
                       <AppRoute exact path="/AddressesDistribution" component={AddressesManagement} layout={LayoutManager}  />
+                      <AppRoute exact path="/ChatManager" component={ChatManager} layout={LayoutManager}  />
 
                   </Switch>
               )}

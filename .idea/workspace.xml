@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="add days work">
+      <change afterPath="$PROJECT_DIR$/backEnd/models/Blogs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/ChatManager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/SummaryManager.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/models/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/addressesManagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/addressesManagement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/layout/HeaderManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/layout/HeaderManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/AllDistributors.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/AllDistributors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/HelloManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/HelloManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/HelloUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/HelloUser.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +50,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../webProject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontEnd/src/components/sections" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -52,6 +60,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\websiteCourse\foodAndMedicineDistributionProject\frontEnd\src\components\sections" />
+      <recent name="C:\websiteCourse\foodAndMedicineDistributionProject\backEnd\models" />
       <recent name="C:\courses\internet_software_engineering\foodAndMedicineDistributionProject\backEnd\routes" />
     </key>
   </component>
@@ -83,7 +93,7 @@
       <workItem from="1630177933003" duration="11459000" />
       <workItem from="1630244491093" duration="22932000" />
       <workItem from="1630333576154" duration="26084000" />
-      <workItem from="1630413925098" duration="2994000" />
+      <workItem from="1630413925098" duration="13215000" />
     </task>
     <task id="LOCAL‎00001" summary="frontend-backend distibution">
       <created>1629847584740</created>
@@ -151,7 +161,13 @@
       <option name="presentableId" value="LOCAL‎00011" />
       <updated>1630283811476</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL‎00012" summary="add days work">
+      <created>1630417079752</created>
+      <option name="number" value="LOCAL‎00012" />
+      <option name="presentableId" value="LOCAL‎00012" />
+      <updated>1630417079752</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +188,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="frontend-backend distibution" />
     <MESSAGE value="user-create" />
-    <option name="LAST_COMMIT_MESSAGE" value="user-create" />
+    <MESSAGE value="add days work" />
+    <option name="LAST_COMMIT_MESSAGE" value="add days work" />
   </component>
 </project>

@@ -4,10 +4,12 @@
   "private": true,
   "dependencies": {
     "@auth0/auth0-react": "^1.6.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "bootstrap": "^5.1.0",
     "classnames": "^2.2.6",
     "leaflet": "^1.7.1",
     "lodash": "^4.17.21",
+    "mdbreact": "^5.1.0",
     "node-sass": "^4.13.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.6.1",
@@ -41,6 +43,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "prop-types": "^15.7.2",

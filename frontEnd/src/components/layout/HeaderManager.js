@@ -7,7 +7,8 @@ import Button from "../elements/Button";
 import LoginButton from "../elements/LoginButton";
 import LogoutButton from "../elements/LogoutButton";
 import AddUserButtonTemp from "../elements/addUserTempButton";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faComment } from '@fortawesome/free-solid-svg-icons'
 import {useAuth0} from "@auth0/auth0-react";
 import ReactRoundedImage from "react-rounded-image";
 
@@ -98,9 +99,6 @@ let f=""
             bottomDivider && 'has-bottom-divider'
           )}>
 
-          {!isAuthenticated&&(
-              <Logo />
-          )}
 
           {!hideNav &&
             <>
@@ -122,30 +120,27 @@ let f=""
                     isActive && 'is-active'
                   )}>
                 <div className="header-nav-inner">
+                  <ul style={{marginTop: 27, marginLeft:27, top: 0,
 
-                  {isAuthenticated&&(
-                      <ul style={{marginTop: 27, marginLeft:27, top: 0,
-
-                        left:0,
-                        bottom: 0,
-                        position:"absolute"}}>
-                          <ReactRoundedImage  roundedColor="#ffffff" image={user.picture} roundedSize="6" imageWidth="127" imageHeight="127" />
-
-                      </ul>
-
-
-                    )}
+                    left:0,
+                    bottom: 0,
+                    position:"absolute"}}>
+                    <Link style={{color:"white"}} to="/ChatManager" >
+                      <FontAwesomeIcon icon={faComment} />
+                    </Link>
+                  </ul>
 
                   <ul className={
                     classNames(
                       'list-reset text-xs',
                       navPosition && `header-nav-${navPosition}`
                     )}>
+
                     {!isLoading && isAuthenticated &&
                     (
 
                         <li>
-                          <Link style={{color:"white"}} to="/ShowMap" >Future Divisions</Link>
+                          <Link style={{color:"white"}} to="/SummaryConclusionManager" >Summary & Conclusions</Link>
                         </li>
 
                     )}
@@ -179,7 +174,6 @@ let f=""
                     <li >
                       <LoginButton/>
                       <LogoutButton/>
-
                     </li>
 
                   </ul>

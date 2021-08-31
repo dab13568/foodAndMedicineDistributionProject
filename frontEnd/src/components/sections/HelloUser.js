@@ -94,7 +94,7 @@ const HelloUser = ({
 
       <div className="container-sm">
         <div className={innerClasses}>
-          <div className="hero-content">
+          <div className="container-xs">
             <h1 className="mt-0 mb-16 " data-reveal-delay="50">
               Welcome back <span className="text-color-primary">{user.name}!</span>
             </h1>
