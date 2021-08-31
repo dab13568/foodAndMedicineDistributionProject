@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="user-create">
-      <change afterPath="$PROJECT_DIR$/backEnd/models/addresses.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backEnd/routes/addresses.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backEnd/routes/dataClusterize.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontEnd/src/layouts/addressesManagement.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontEnd/src/views/mapClusterize.js" afterDir="false" />
+    <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="add days work">
+      <change afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/addressesManagement.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backEnd/models/addresses.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/models/addresses.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backEnd/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/models/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backEnd/routes/addresses.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/routes/addresses.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backEnd/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/routes/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/elements/addUserTempButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/elements/addUserTempButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/layout/AddressDistributor.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/layout/AddressDistributor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/layout/HeaderManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/layout/HeaderManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/AllDistributors.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/AllDistributors.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/AllDistributors.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/AllDistributors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/HelloUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/HelloUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/layouts/addressesManagement.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,21 +23,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
   </component>
   <component name="ProjectId" id="1xC6mRGHLZkQW8BWruNjlvuAhQg" />
   <component name="ProjectLevelVcsManager">
@@ -52,7 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/backEnd/routes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../webProject" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -61,8 +52,8 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\courses\internet_software_engineering\foodAndMedicineDistributionProject\backEnd\routes" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\websiteCourse\foodAndMedicineDistributionProject\frontEnd\src\components\sections" />
     </key>
   </component>
   <component name="RunManager">
@@ -89,9 +80,12 @@
       <workItem from="1629848071113" duration="5682000" />
       <workItem from="1629896119062" duration="10436000" />
       <workItem from="1629977516439" duration="10768000" />
-      <workItem from="1630008645386" duration="6501000" />
-      <workItem from="1630177933003" duration="11459000" />
-      <workItem from="1630244491093" duration="21769000" />
+      <workItem from="1630008645386" duration="12861000" />
+      <workItem from="1630181770369" duration="16266000" />
+      <workItem from="1630240850304" duration="30076000" />
+      <workItem from="1630281908550" duration="1714000" />
+      <workItem from="1630328608637" duration="5273000" />
+      <workItem from="1630347575337" duration="21191000" />
     </task>
     <task id="LOCAL‎00001" summary="frontend-backend distibution">
       <created>1629847584740</created>
@@ -153,7 +147,31 @@
       <option name="presentableId" value="LOCAL‎00010" />
       <updated>1629939781631</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL‎00011" summary="frontend-backend distibution">
+      <created>1630015398740</created>
+      <option name="number" value="LOCAL‎00011" />
+      <option name="presentableId" value="LOCAL‎00011" />
+      <updated>1630015398740</updated>
+    </task>
+    <task id="LOCAL‎00012" summary="add address for new user">
+      <created>1630196605462</created>
+      <option name="number" value="LOCAL‎00012" />
+      <option name="presentableId" value="LOCAL‎00012" />
+      <updated>1630196605462</updated>
+    </task>
+    <task id="LOCAL‎00013" summary="add address for new user">
+      <created>1630247752938</created>
+      <option name="number" value="LOCAL‎00013" />
+      <option name="presentableId" value="LOCAL‎00013" />
+      <updated>1630247752938</updated>
+    </task>
+    <task id="LOCAL‎00014" summary="add days work">
+      <created>1630283006345</created>
+      <option name="number" value="LOCAL‎00014" />
+      <option name="presentableId" value="LOCAL‎00014" />
+      <updated>1630283006345</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,8 +190,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="frontend-backend distibution" />
     <MESSAGE value="user-create" />
-    <option name="LAST_COMMIT_MESSAGE" value="user-create" />
+    <MESSAGE value="frontend-backend distibution" />
+    <MESSAGE value="add address for new user" />
+    <MESSAGE value="add days work" />
+    <option name="LAST_COMMIT_MESSAGE" value="add days work" />
   </component>
 </project>

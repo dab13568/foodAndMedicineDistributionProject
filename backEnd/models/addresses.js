@@ -1,4 +1,4 @@
-const { MongoClient } = require('mongodb');
+const { MongoClient,ObjectId } = require('mongodb');
 let express = require('express');
 
 var app = express.Router();
@@ -23,17 +23,110 @@ client.connect().then(() => {
     db = client.db("FoodAndMedicineDistribution");
 
 });
+
+
+async function getType(address) {
+    // search the user name in th DB and return his type
+    let a = await db.collection("addresses").findOne({"address":address});
+
+    if (a !== null && a.address === address) {
+        return a;
+    }
+    return undefined;
+}
+module.exports.getType = getType
+
 module.exports.addAddress = async function(addressRecord)
 {
-    // check if the user name already exist
-    // if username not exist add the user into the DB
-    await db.collection.insertOne(addressRecord, (error, result) => { // callback of insertOne
-        if (error) throw error;
-        // return updated list
-        db.collection.find().toArray((_error, _result) => { // callback of find
-            if (_error) throw _error;
-            return { massage: "User added successfully!", succeeded: true,updatedList:_result };
 
-        });
+    // check if the address name already exist
+    if (await getType(addressRecord) !== undefined)
+        return { massage: "address already exist!", succeeded: false };
+
+    // if address not exist add the address into the DB
+    await db.collection("addresses").insertOne({
+        "address":addressRecord,
+        "type":2,
+        "daysInWeek":[0,1,2,3,4,5]
     });
+
+    return { massage: "address added successfully!", succeeded: true };
+
 }
+module.exports.getAllAddresses = async function() {
+    return db.collection("addresses").find().toArray();
+}
+
+module.exports.deleteAddress = async function(id) {
+    let a = await db.collection("addresses").findOne({"_id":id});
+    if (a===undefined)
+    {
+        console.log("a undefined")
+        return { succeeded: false };
+
+    }
+    await db.collection("addresses").deleteOne({ "_id": ObjectId(id) })
+    return { succeeded: true };
+
+
+}
+module.exports.updateAddressType = async function(id,val) {
+    //let oldType = await getType(username);
+
+    let succeeded = true,
+        message = "User updated successfully!"
+
+    /*db.collection.updateOne({ Id: sub }, { $set: "daysInWeek": daysInWeek }, (error, result) => {
+        if (error) throw error;
+        // send back entire updated list, to make sure frontend data is up-to-date
+        db.collection.find().toArray(function (_error, _result) {
+            if (_error) throw _error;
+            response.json(_result);
+        });
+    });*/
+
+
+    //let user = await this.getUser(username);
+    await db.collection("addresses").findOneAndUpdate({ "_id": ObjectId(id) }, {
+        $set: {
+            "type": val.value,
+
+        }
+    }).catch(reason => {
+        succeeded = false;
+        message = reason;
+    });
+    return { message: message, succeeded: succeeded };
+}
+
+module.exports.updateAddress = async function(id,value) {
+    //let oldType = await getType(username);
+
+    let succeeded = true,
+        message = "User updated successfully!"
+
+    /*db.collection.updateOne({ Id: sub }, { $set: "daysInWeek": daysInWeek }, (error, result) => {
+        if (error) throw error;
+        // send back entire updated list, to make sure frontend data is up-to-date
+        db.collection.find().toArray(function (_error, _result) {
+            if (_error) throw _error;
+            response.json(_result);
+        });
+    });*/
+
+
+    //let user = await this.getUser(username);
+    await db.collection("addresses").findOneAndUpdate({ "_id": ObjectId(id) }, {
+        $set: {
+            "daysInWeek": value,
+
+        }
+    }).catch(reason => {
+        succeeded = false;
+        message = reason;
+    });
+    return { message: message, succeeded: succeeded };
+}
+
+
+

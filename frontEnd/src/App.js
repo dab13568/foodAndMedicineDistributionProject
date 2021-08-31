@@ -17,7 +17,7 @@ import Welcome from './views/Welcome';
 import HelloUser from './components/sections/HelloUser';
 import HelloManager from './components/sections/HelloManager';
 import AllDistributors from './components/sections/AllDistributors';
-
+import AddressesManagement from './components/sections/addressesManagement';
 import AddressDistributor from './components/layout/AddressDistributor';
 
 import Home from './views/Home';
@@ -52,6 +52,7 @@ function App () {
                       <AppRoute exact path="/AddAddress" component={AddressDistributor}  />
                       <AppRoute exact path="/Manager" component={HelloManager} layout={LayoutManager}  />
                       <AppRoute exact path="/DistributorsDetails" component={AllDistributors} layout={LayoutManager}  />
+                      <AppRoute exact path="/AddressesDistribution" component={AddressesManagement} layout={LayoutManager}  />
 
                   </Switch>
               )}

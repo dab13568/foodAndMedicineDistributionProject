@@ -162,7 +162,7 @@ let f=""
                     (
 
                         <li>
-                          <Link style={{color:"white"}} to="/AddressesDistribution" onClick={closeMenu}>Addresses for distribution</Link>
+                          <Link style={{color:"white"}} to="/AddressesDistribution" onClick={closeMenu}>Addresses distribution</Link>
                         </li>
 
                     )}

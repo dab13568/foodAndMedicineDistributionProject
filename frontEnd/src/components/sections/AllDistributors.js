@@ -7,6 +7,8 @@ import {useAuth0} from "@auth0/auth0-react";
 import {win} from "leaflet/src/core/Browser";
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
+import Button from '../../components/elements/Button';
+
 import {
     SortableContainer,
     SortableElement,
@@ -29,6 +31,7 @@ import {
 //     { id: 8, name: 'Tom Riddle', age: 28 },
 //     { id: 9, name: 'Bolo', age: 23 },
 // ];
+
 
 const AllDistributors= ({
                             className,
@@ -81,6 +84,8 @@ const AllDistributors= ({
     const animatedComponents = makeAnimated();
 
     const { user } = useAuth0();
+    const [showbutton,setShowButton]=useState(true)
+    const [showLoading,setshowLoading]=useState(false)
 
 
     useEffect(() => {
@@ -93,7 +98,8 @@ const AllDistributors= ({
                 'Content-Type': 'application/json'
             },
         });
-        const data = await answer.json();
+
+            const data = await answer.json();
         if (data !== null)
         {
             setUSERS(data);
@@ -103,17 +109,16 @@ const AllDistributors= ({
         })();
     }, []);
 
-    const options = [
-        { value: '0', label: 'Sunday' },
-        { value: '1', label: 'Monday' },
-        { value: '2', label: 'Tuesday' },
-        { value: '3', label: 'Wednesday' },
-        { value: '4', label: 'Thursday' },
-        { value: '5', label: 'Friday' }
-    ]
-    const [selected, setSelected] = useState([
 
-    ]);
+    const options = [
+        { value: 0, label: 'Sunday' },
+        { value: 1, label: 'Monday' },
+        { value: 2, label: 'Tuesday' },
+        { value: 3, label: 'Wednesday' },
+        { value: 4, label: 'Thursday' },
+        { value: 5, label: 'Friday' }
+    ]
+    const [selected, setSelected] = useState([]);
     const [currentId, setCurrentId] = useState("");
     const [jsonUpdateDays,setjsonUpdateDays] = useState({});
 
@@ -123,18 +128,37 @@ const AllDistributors= ({
         const daysArray = selected.filter(x => x!==undefined);
         const daysArrays = daysArray.map(x => x.value);
 
-        if(jsonUpdateDays[currentId]===undefined)
-        {
-            window.alert("undifined id "+currentId)
-        }
-
-
         if(currentId!=="")
             setjsonUpdateDays(prevPersonInfo => ({...prevPersonInfo, [currentId]: daysArrays}))
 
     }, [selected,currentId]);
 
+    async function onClick()
+    {
+        setShowButton(false)
+        setshowLoading(true)
+        if(jsonUpdateDays!=={})
+        {
+            const answer=await fetch('/users/update-user',{
+                method: "POST",
+                body: JSON.stringify(jsonUpdateDays),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+            });
 
+            setShowButton(true)
+            setshowLoading(false)
+
+            if(answer.status===200)
+                window.alert("The changes were made successfully!")
+            else
+                window.alert("Error! the changes didnt save")
+
+
+        }
+    }
 
 
     return (
@@ -145,6 +169,12 @@ const AllDistributors= ({
             <div className="container-sm">
                 <div className={innerClasses}>
                     <div >
+                        {showbutton &&
+                        <Button onClick={onClick} style={{marginRight:100,backgroundColor: "#6163ff",color: "white"}}>Save Changes</Button>
+                        }
+                        {showLoading &&
+                        <span style={{color:"white"}} >Loading... </span>
+                        }
                         <input
                             type="search"
                             value={name}
@@ -152,6 +182,7 @@ const AllDistributors= ({
                             className="input"
                             placeholder="Filter"
                         />
+
                         <div className="user-list">
                         {foundUsers && foundUsers.length > 0 ? (
                             foundUsers.map((User) => (
@@ -166,10 +197,9 @@ const AllDistributors= ({
                                     <li>
                                         <span style={{color:"black"}} >Days work: </span>
                                         <Select style={{width:700}}
-                                                closeMenuOnSelect={false}
                                                 components={animatedComponents}
                                                 isMulti
-                                                defaultValue={options[0]}
+                                                defaultValue={  User.daysInWeek.map(x=>options[x])}
                                                 options={options}
                                                 onChange={(e) => {
                                                     onChange(e);

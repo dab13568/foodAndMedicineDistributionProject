@@ -43,6 +43,10 @@ const HelloUser = ({
 
 
 
+  async function moveToManager()
+  {
+    window.location.href = "/Manager"
+  }
 
 
   const { user } = useAuth0();
@@ -75,7 +79,7 @@ const HelloUser = ({
       }
       if(type ==="manager")
       {
-        window.location.href = "/Manager"
+        await moveToManager()
         return null;
       }
     })();

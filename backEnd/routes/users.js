@@ -15,13 +15,17 @@ router.post("/add-user", async function(req, res) {
 });
 router.post("/update-user", async function(req, res) {
   let message="good"
-  for (let item in req.body)
+  if( req.body!=={})
   {
-  let answer = await usersModel.updateUser(item,req.body[item]);
-  if(answer.succeeded===false)
-    message="bad"
-  //console.log(req.body.sub);
-}
+    for (let item in req.body)
+    {
+      let answer = await usersModel.updateUser(item,req.body[item]);
+      if(answer.succeeded===false)
+        message="bad"
+      //console.log(req.body.sub);
+    }
+  }
+
   res.send(message);
 
 });

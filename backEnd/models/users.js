@@ -106,7 +106,7 @@ module.exports.addUser = async function(id,type,address,phone,name)
         "address": address,
         "phone": phone,
         "name":name,
-        "daysInWeek":""
+        "daysInWeek":[]
     });
 
     return { massage: "User added successfully!", succeeded: true };
