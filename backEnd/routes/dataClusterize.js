@@ -3,6 +3,7 @@ var router = express.Router();
 const bodyParser = require("body-parser");
 const haversine = require("haversine");
 var nodeKmeans = require("node-kmeans");
+const haversineDistance = require('haversine-distance')
 
 router.post("/", function(req, res, next) {
 
@@ -25,6 +26,28 @@ router.post("/", function(req, res, next) {
       res.json(result);
     }
   });
+});
+router.post("/matchUsers", function(req, res, next) {
+  var data=req.body;
+  let arr=[]
+  for(let key in data.userAddr) {
+    let userAddress = data.userAddr[key]
+    console.log("temp",userAddress)
+
+    let dist=100000000000
+    let match
+    for (let item in data.distAddresses) {
+      console.log("item",data.distAddresses[item])
+      let temp=haversineDistance(userAddress,data.distAddresses[item])
+
+      if(dist> temp) {
+        dist = temp
+        match = data.distAddresses[item]
+      }
+    }
+    arr.push({userId:key,match:match})
+  }
+  res.send(arr)
 });
 
 module.exports = router;

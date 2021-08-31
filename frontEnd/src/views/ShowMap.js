@@ -1,6 +1,6 @@
 import React, {Component, useState, useEffect} from "react";
 import ReactTable from "react-table";
-import Map from "./Map";
+import Map from "./mapClusterize";
 //import "react-table/react-table.css";
 import styled from "styled-components";
 import Container from "react-bootstrap/Container";
@@ -37,6 +37,75 @@ const ShowMap =
         topDivider && 'has-top-divider',
         bottomDivider && 'has-bottom-divider'
     );
+        var data = {
+            data: [[32.0683607,34.8285315],[32.0701262,34.8287886],[32.0662206,34.8240212],[32.078015,34.9098324],[32.0768029,34.9088009]],// קואורדינטות של כלל המיקומים לחלוקה
+            k: 2 //מספר המחלקים
+        };
+        const [group,setGroup] = useState([])
+        const [locations,setLocations] = useState({})
+        useEffect(() => {
+
+            setLocations(data.data)
+        }, []);
+function usersMatch(){
+    var userAddr={1:[32.0683607,34.8285315],0:[32.0781672,34.9084098]}
+    //console.log("group",group)
+    let temp=group.map(x=>x.locations.centroid)
+    console.log("temp-group",temp)
+    var data={userAddr:userAddr,distAddresses:temp}
+    fetch("/clusterize/matchUsers", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json"
+        }
+    }).then(res => {
+        res.json().then(value => {
+            console.log("value",value);
+
+            var arr = [];
+            //var index = 0;
+            /*for (let index in [0,1]) {
+
+                //console.log("user is:    ", user);
+                arr.push({user: index, locations: value[index]});
+                //console.log("arr after push is:", arr);
+
+            }
+            //console.log("arr is   :", arr);
+            setGroup(arr)
+*/
+        });
+    });
+}
+        function click(){
+
+        fetch("/clusterize", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json"
+            }
+        }).then(res => {
+            res.json().then(value => {
+                //console.log(value[0]);
+                var arr = [];
+                //var index = 0;
+                for (let index in [0,1]) {
+
+                        //console.log("user is:    ", user);
+                        arr.push({user: index, locations: value[index]});
+                        //console.log("arr after push is:", arr);
+
+                }
+                //console.log("arr is   :", arr);
+                setGroup(arr)
+
+            });
+        });
+        }
 
     return(
         <section
@@ -49,6 +118,11 @@ const ShowMap =
                         <h1 className="mt-0 mb-16 ">
                             Welcome back <span className="text-color-primary">hello!</span>
                         </h1>
+
+                        <Map  locations={locations}
+                                        group={group} />?
+                        <button onClick={click}> click on me</button>
+                        <button onClick={usersMatch}> click to match user</button>
                     </div>
                 </div>
             </div>
