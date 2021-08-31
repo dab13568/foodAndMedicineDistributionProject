@@ -65,6 +65,7 @@ const AddressesManagement= ({
     const [showAddbutton,setShowAddButton]=useState(true)
 
     const [showLoading,setshowLoading]=useState(false)
+    const [showAddLoading,setshowAddLoading]=useState(false)
 
 
     useEffect(() => {
@@ -102,7 +103,7 @@ const AddressesManagement= ({
     async function AddAddressClick()
     {
 
-        setshowLoading(true)
+        setshowAddLoading(true)
         setShowAddButton(false)
         let valid=false
         await Loc.search(InputAddAddress).then(json =>
@@ -122,7 +123,6 @@ const AddressesManagement= ({
                     'Content-Type': 'application/json'
                 },
             });
-            window.alert(answer.status)
             if(answer.status===200)
             {
                 window.alert("The address added!")
@@ -143,7 +143,7 @@ const AddressesManagement= ({
 
             }
         }
-        setshowLoading(false)
+        setshowAddLoading(false)
         setShowAddButton(true)
     }
     const options = [
@@ -239,7 +239,6 @@ const AddressesManagement= ({
             if(idAddress!=="")
             {
                 const paylod={id:idAddress}
-                window.alert(idAddress)
                 const answer=await fetch('/addresses/delete-address',{
                     method: "POST",
                     body:JSON.stringify(paylod),
@@ -249,7 +248,6 @@ const AddressesManagement= ({
                     },
                 });
                 const data = await answer.json();
-                window.alert(answer.status)
                 if(answer.status===200)
                 {
                     window.alert("The address delete!")
@@ -289,7 +287,7 @@ const AddressesManagement= ({
                                 {showAddbutton &&
                                 <Button onClick={AddAddressClick} style={{marginRight:30,backgroundColor: "#6163ff",color: "white"}}>Add</Button>
                                 }
-                                {showLoading &&
+                                {showAddLoading &&
                                 <span style={{color:"white"}} >Loading... </span>
                                 }
                                 <input

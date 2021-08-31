@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="user-create">
+    <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="add days work">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/models/addresses.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/models/addresses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/routes/dataClusterize.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/routes/dataClusterize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/views/ShowMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/views/ShowMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/views/mapClusterize.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/views/mapClusterize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backEnd/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/models/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/addressesManagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/addressesManagement.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +83,7 @@
       <workItem from="1630177933003" duration="11459000" />
       <workItem from="1630244491093" duration="22932000" />
       <workItem from="1630333576154" duration="26084000" />
+      <workItem from="1630413925098" duration="2994000" />
     </task>
     <task id="LOCAL‎00001" summary="frontend-backend distibution">
       <created>1629847584740</created>
