@@ -142,6 +142,28 @@ module.exports.updateUser = async function(id,value) {
     });
     return { message: message, succeeded: succeeded };
 }
+module.exports.updateUserAddresses=async function(data)
+{
+
+    let succeeded=false
+    let user=await exports.getUser(data.userId)
+    user=JSON.parse(user)
+    //console.log("user",user)
+
+    let addresses=user.addressesForDistribution
+    //console.log("addresses",addresses)
+    addresses.push(data.match)
+    //console.log("addresses",addresses)
+    await db.collection("users").findOneAndUpdate({ "Id": data.userId }, {
+        $set: {
+            "addressesForDistribution": addresses,
+
+        }
+    }).catch(reason => {
+        succeeded = false;
+    });
+    return succeeded
+}
 
 module.exports.getAllUsers = async function() {
     return  db.collection("users").find({type: "Distributor"}).toArray();

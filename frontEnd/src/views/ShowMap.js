@@ -10,6 +10,7 @@ import Select from "react-select";
 import Button from "react-bootstrap/Button";
 import {SectionProps} from "../utils/SectionProps";
 import classNames from "classnames";
+import data from "bootstrap/js/src/dom/data";
 
 const ShowMap =
     ({
@@ -37,50 +38,84 @@ const ShowMap =
         topDivider && 'has-top-divider',
         bottomDivider && 'has-bottom-divider'
     );
-        var data = {
-            data: [[32.0683607,34.8285315],[32.0701262,34.8287886],[32.0662206,34.8240212],[32.078015,34.9098324],[32.0768029,34.9088009]],// קואורדינטות של כלל המיקומים לחלוקה
-            k: 2 //מספר המחלקים
-        };
+        const [addressesData,setAddressesData]=useState([])
+        const [users,setUsers] = useState([])
         const [group,setGroup] = useState([])
         const [locations,setLocations] = useState({})
-        useEffect(() => {
 
-            setLocations(data.data)
+
+        useEffect(() => {
+            (async () => {
+                const answer = await fetch('/users/get-all-users', {
+                    method: "POST",
+                    body:"",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                });
+                const data = await answer.json();
+                if (data !== null)
+                {
+                    setUsers(data)
+                }
+                const answer1 = await fetch('/addresses/get-all-addresses', {
+                    method: "POST",
+                    body:"",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                });
+
+                const data1 = await answer1.json();
+                if (data1 !== null)
+                {
+                    setAddressesData(data1)
+                    setLocations(data1.map(x=>x.cordinate))
+                }
+            })();
         }, []);
-function usersMatch(){
-    var userAddr={1:[32.0683607,34.8285315],0:[32.0781672,34.9084098]}
-    //console.log("group",group)
-    let temp=group.map(x=>x.locations.centroid)
-    console.log("temp-group",temp)
-    var data={userAddr:userAddr,distAddresses:temp}
+
+
+async function usersMatch(){
+    //var userAddr={1:[32.0683607,34.8285315],0:[32.0781672,34.9084098]}
+    console.log("group",group)
+    let temp=group.map(x=>[x.locations.centroid,x.locations.cluster])
+
+    var dataCentroid={users:users,distAddresses:temp}
     fetch("/clusterize/matchUsers", {
         method: "POST",
-        body: JSON.stringify(data),
+        body: JSON.stringify(dataCentroid),
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json"
         }
     }).then(res => {
         res.json().then(value => {
-            console.log("value",value);
 
-            var arr = [];
-            //var index = 0;
-            /*for (let index in [0,1]) {
+            console.log("value", data);
+            fetch("/users/updateUsersAddresses", {
+                method: "POST",
+                body: JSON.stringify(value),
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json"
+                }
+            }).then(res => {
+                res.json().then(value => {
+                    window.alert("user updated")
+                })
+            })
 
-                //console.log("user is:    ", user);
-                arr.push({user: index, locations: value[index]});
-                //console.log("arr after push is:", arr);
+        })});
 
-            }
-            //console.log("arr is   :", arr);
-            setGroup(arr)
-*/
-        });
-    });
+
 }
         function click(){
-
+        console.log("locations",locations)
+        var data={data: locations,k:users.length}
+        console.log("cordinates",data)
         fetch("/clusterize", {
             method: "POST",
             body: JSON.stringify(data),
@@ -100,6 +135,7 @@ function usersMatch(){
                         //console.log("arr after push is:", arr);
 
                 }
+                //console.log("group",arr)
                 //console.log("arr is   :", arr);
                 setGroup(arr)
 

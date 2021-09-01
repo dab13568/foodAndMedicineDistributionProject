@@ -11,6 +11,7 @@ router.post("/add-address", async function(req, res) {
     res.send(succeeded);
 });
 router.post("/get-all-addresses", async function(req, res) {
+
     let addresses = await addressesModel.getAllAddresses();
     res.send(addresses);
 });

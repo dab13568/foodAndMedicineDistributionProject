@@ -30,22 +30,25 @@ router.post("/", function(req, res, next) {
 router.post("/matchUsers", function(req, res, next) {
   var data=req.body;
   let arr=[]
-  for(let key in data.userAddr) {
-    let userAddress = data.userAddr[key]
-    console.log("temp",userAddress)
+  console.log("temp",data.distAddresses)
+
+  for(let key in data.users) {
+    let userAddress = data.users[key].cordinate
 
     let dist=100000000000
     let match
     for (let item in data.distAddresses) {
       console.log("item",data.distAddresses[item])
-      let temp=haversineDistance(userAddress,data.distAddresses[item])
+      let temp=haversineDistance(userAddress,data.distAddresses[item][0])
 
       if(dist> temp) {
         dist = temp
-        match = data.distAddresses[item]
+        match = data.distAddresses[item][1]
+        console.log("match",data.distAddresses[item][1])
+
       }
     }
-    arr.push({userId:key,match:match})
+    arr.push({userId:data.users[key].Id,match:match})
   }
   res.send(arr)
 });
