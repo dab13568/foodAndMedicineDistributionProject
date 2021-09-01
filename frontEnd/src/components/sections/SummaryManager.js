@@ -43,9 +43,43 @@ const SummaryManager = ({
   );
 
 
+  let message=""
+  let subject=""
+
+  function changeSubject(e)
+  {
+      subject=e.target.value
+  }
+    function changeMessage(e)
+    {
+        message=e.target.value
+    }
+
+    async function sendBlog()
+    {
+        if(message!=="" && subject!=="")
+        {
+            const payload={subject:subject,message:message}
+            const answer=await fetch('/blogs/add-blog',{
+                method: "POST",
+                body:JSON.stringify(payload),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+            });
+            if(answer.status===200) {
+                window.alert("The blog has been successfully submitted!")
+                window.location.reload()
+
+            }
+            else window.alert("error")
+        }
+        else window.alert("Please fill in all the fields")
+    }
 
 
-  return (
+    return (
       <section
           {...props}
           className={outerClasses}
@@ -61,14 +95,14 @@ const SummaryManager = ({
                       <label htmlFor="defaultFormContactSubjectEx" className="grey-text">
                         Subject
                       </label>
-                      <input type="text" id="defaultFormContactSubjectEx" className="form-control" />
+                      <input onChange={changeSubject} type="text" id="defaultFormContactSubjectEx" className="form-control" />
                       <br />
                       <label htmlFor="defaultFormContactMessageEx" className="grey-text">
                         Your message
                       </label>
-                      <textarea type="text" id="defaultFormContactMessageEx" className="form-control" rows="3" />
+                      <textarea onChange={changeMessage} type="text" id="defaultFormContactMessageEx" className="form-control" rows="3" />
                       <div style={{marginTop:20}}>
-                        <Button >Send Blog!</Button>
+                        <Button onClick={sendBlog} >Send Blog!</Button>
 
                       </div>
                   </MDBCol>

@@ -15,6 +15,12 @@ router.post("/get-all-addresses", async function(req, res) {
     let addresses = await addressesModel.getAllAddresses();
     res.send(addresses);
 });
+router.post("/get-all-addresses-with-id", async function(req, res) {
+    let addresses = await addressesModel.getAllAddressesWithId(req.body.addresses);
+
+    res.send(addresses);
+});
+
 
 router.post("/delete-address", async function(req, res) {
     let { succeeded } = await addressesModel.deleteAddress(req.body.id);

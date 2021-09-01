@@ -152,7 +152,7 @@ const ContactManager= ({
                         <div className="container-xs">
                             <div style={{marginLeft: 280,marginTop:80
                             }} className="contact-form" >
-                                <ul>
+                                <ul style={{listStyleType: "none",width:200}}>
 
                                     <li>
                                         <label>Subject</label>

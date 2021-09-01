@@ -56,10 +56,20 @@ module.exports.addAddress = async function(addressRecord)
 module.exports.getAllAddresses = async function() {
     return db.collection("addresses").find().toArray();
 }
+
+module.exports.getAllAddressesWithId = async function(userAddresses) {
+    let arr=[]
+    for(let index in userAddresses)
+    arr.push(await db.collection("addresses").find({"_id":ObjectId(userAddresses[index])}).toArray());
+    console.log("arr",arr)
+
+    return arr
+}
 module.exports.deleteAddress = async function(id) {
     let a = await db.collection("addresses").findOne({"_id":id});
     if (a===undefined)
     {
+
         console.log("a undefined")
         return { succeeded: false };
 

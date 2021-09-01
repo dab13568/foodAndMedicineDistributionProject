@@ -99,9 +99,7 @@ const Header = ({
             bottomDivider && 'has-bottom-divider'
           )}>
 
-          {!isAuthenticated&&(
-              <Logo />
-          )}
+
 
           {!hideNav &&
             <>
@@ -125,10 +123,9 @@ const Header = ({
                 <div className="header-nav-inner">
 
                   {isAuthenticated&&(
-                      <ul>
+                      <ul style={{listStyleType: "none"}}>
                         <li>
-                          <div style={{marginTop: 27, marginLeft:27, top: 0,
-
+                          <div style={{marginTop: 40, marginLeft:450, top: 0,
                             left:0,
                             bottom: 0,
                             position:"absolute"}}>
@@ -136,21 +133,14 @@ const Header = ({
                               <FontAwesomeIcon icon={faComment} size={"2x"} />
                             </Link>
                           </div>
-                          <div style={{marginTop: 100, marginLeft:27, top: 0,
-
+                          <div style={{marginTop: 50, marginLeft:50, top: 0,
                             left:0,
                             bottom: 0,
                             position:"absolute"}}>
                             <ReactRoundedImage  roundedColor="#ffffff" image={user.picture} roundedSize="6" imageWidth="127" imageHeight="127" />
-
                           </div>
                         </li>
                       </ul>
-
-
-
-
-
                     )}
 
                   <ul className={
@@ -158,30 +148,19 @@ const Header = ({
                       'list-reset text-xs',
                       navPosition && `header-nav-${navPosition}`
                     )}>
+
                     {!isLoading && isAuthenticated &&
                     (
-
                         <li>
-                          <Link style={{color:"white"}} to="/ShowMap" >Future Divisions</Link>
+                          <Link style={{color:"white"}} to="/MyDistribution" onClick={closeMenu}>My distribution addresses</Link>
                         </li>
-
-                    )}
-                    {!isLoading && isAuthenticated &&
-                    (
-
-                        <li>
-                          <Link style={{color:"white"}} to="/SuccessfullyDistributed" onClick={closeMenu}>Successfully distributed</Link>
-                        </li>
-
                     )}
 
                     {!isLoading && isAuthenticated &&
                     (
-
                         <li>
-                          <Link style={{color:"white"}} to="/AdministrativeSummary" onClick={closeMenu}>Administrative Summary</Link>
+                          <Link style={{color:"white"}} to="/ShowBlogs" onClick={closeMenu}>Administrative Summary</Link>
                         </li>
-
                     )}
 
                     <li >

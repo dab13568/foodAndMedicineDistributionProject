@@ -15,3 +15,22 @@ client.connect().then(() => {
 });
 
 
+module.exports.addBlogs = async function(date,subject,message)
+{
+
+
+
+    // if address not exist add the address into the DB
+    await db.collection("Blogs").insertOne({
+        "date":date,
+        "subject":subject,
+        "message":message
+    });
+
+    return { massage: "the blog added successfully!", succeeded: true };
+
+}
+
+module.exports.getAllBlogs = async function() {
+    return db.collection("Blogs").find().toArray();
+}
