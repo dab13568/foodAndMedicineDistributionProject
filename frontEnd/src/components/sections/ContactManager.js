@@ -63,6 +63,9 @@ const ContactManager= ({
     );
 
     let email="";
+    const { user } = useAuth0();
+
+
     useEffect(() => {
         (async () => {
 
@@ -82,7 +85,7 @@ const ContactManager= ({
     }, []);
 
 
-    let fromName=""
+    let sub=""
     let m=""
 
 
@@ -90,9 +93,9 @@ const ContactManager= ({
     // const [fromName,setfromName]=useState("nn")
     // const [message,setMessage]=useState("hello")
 
-    function setfromName(e)
+    function setSubject(e)
     {
-        fromName=e.target.value
+        sub=e.target.value
     }
     function setMessage(e)
     {
@@ -103,8 +106,11 @@ const ContactManager= ({
         var x=
             {
                 to_Email:"shlomichi1351@gmail.com",
-                fromName:fromName,
+                fromName:user.name,
+                replay_email:user.email,
+                subject:sub,
                 message:m
+
             };
         console.log(m)
         e.preventDefault();    //This is important, i'm not sure why, but the email won't send without it
@@ -135,29 +141,37 @@ const ContactManager= ({
             {...props}
             className={outerClasses}
         >
-            <div className="container-xs">
+            <div className="container-xs" >
                 <div className="hero-content ">
 
-                    <div style={{marginLeft: 280,marginTop:200
-                    }} className="contact-form" >
-                        <ul>
+                    <div style={{marginTop:70
+                    }} className="container-xs">
+                        <h1  className="mt-0 mb-16 " data-reveal-delay="50">
+                            Have a <span className="text-color-primary"> question?</span>
+                        </h1>
+                        <div className="container-xs">
+                            <div style={{marginLeft: 280,marginTop:80
+                            }} className="contact-form" >
+                                <ul>
 
-                            <li>
-                                <label>Subject</label>
-                                <input onChange={setfromName} type="text" name="subject" />
-                            </li>
-                            <li>
-                                <label>Message</label>
-                                <textarea onChange={setMessage} name="html_message" />
-                            </li>
-                            <li>
-                                <Button onClick={sendEmail} />
+                                    <li>
+                                        <label>Subject</label>
+                                        <input onChange={setSubject} type="text" name="subject" />
+                                    </li>
+                                    <li>
+                                        <label>Message</label>
+                                        <textarea onChange={setMessage} name="html_message" />
+                                    </li>
+                                    <li>
+                                        <Button onClick={sendEmail} >Send to manager!</Button>
 
-                            </li>
-                        </ul>
-
+                                    </li>
+                                </ul>
+                            </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+
             </div>
         </section>
     )
