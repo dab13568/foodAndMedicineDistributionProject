@@ -5,7 +5,7 @@ import {
     withRouter,
     BrowserRouter as Router,
     Switch,
-    Route
+
 } from "react-router-dom";
 
 import LayoutDefault from './layouts/LayoutDefault';

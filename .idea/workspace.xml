@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="chat">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/bin/www" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/models/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/routes/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/layout/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/layout/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/layout/HeaderManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/layout/HeaderManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/ChatManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/ContactManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/HelloUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/HelloUser.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
