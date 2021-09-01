@@ -30,7 +30,6 @@ router.post("/update-user", async function(req, res) {
 
 });
 router.post("/get-user", async function(req, res) {
-  console.log("gfdfgjfdekjrtghnfmjrtghbnfmjrthgbn")
   let user = await usersModel.getUser(req.body.sub);
   console.log(req.body.sub);
   res.send(user);
@@ -40,7 +39,14 @@ router.post("/get-manager", async function(req, res) {
   res.send(user);
 });
 
-
+router.post("/updateUsersAddresses", async function(req, res) {
+  console.log("reached updateUsersAddresses")
+  let status
+  for(let item in req.body) {
+     status = await usersModel.updateUserAddresses(req.body[item]);
+  }
+  res.send(status);
+});
 router.post("/get-all-users", async function(req, res) {
   let users = await usersModel.getAllUsers();
   res.send(users);

@@ -53,6 +53,8 @@ function App () {
               {isAuthenticated && (
                   <Switch>
                       <AppRoute exact path="/" component={HelloUser} layout={LayoutDefault} />
+                      <AppRoute exact path="/ShowMap" component={ShowMap} layout={LayoutDefault} />
+
                       <AppRoute exact path="/SummaryConclusionManager" component={SummaryManager} layout={LayoutManager} />
                       <AppRoute exact path="/AddAddress" component={AddressDistributor}  />
                       <AppRoute exact path="/Manager" component={HelloManager} layout={LayoutManager}  />
