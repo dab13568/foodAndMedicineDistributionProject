@@ -17,7 +17,7 @@ import Welcome from './views/Welcome';
 import HelloUser from './components/sections/HelloUser';
 import HelloManager from './components/sections/HelloManager';
 import AllDistributors from './components/sections/AllDistributors';
-import ChatManager from './components/sections/ChatManager';
+import ContactManager from './components/sections/ContactManager';
 
 import SummaryManager from './components/sections/SummaryManager';
 
@@ -42,6 +42,7 @@ function App () {
 
     const { isAuthenticated,user } = useAuth0();
 
+
     return (
 
     <ScrollReveal
@@ -57,7 +58,7 @@ function App () {
                       <AppRoute exact path="/Manager" component={HelloManager} layout={LayoutManager}  />
                       <AppRoute exact path="/DistributorsDetails" component={AllDistributors} layout={LayoutManager}  />
                       <AppRoute exact path="/AddressesDistribution" component={AddressesManagement} layout={LayoutManager}  />
-                      <AppRoute exact path="/ChatManager" component={ChatManager} layout={LayoutManager}  />
+                      <AppRoute exact path="/contactManager" component={ContactManager} layout={LayoutDefault}  />
 
                   </Switch>
               )}

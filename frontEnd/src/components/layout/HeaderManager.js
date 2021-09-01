@@ -120,14 +120,13 @@ let f=""
                     isActive && 'is-active'
                   )}>
                 <div className="header-nav-inner">
-                  <ul style={{marginTop: 27, marginLeft:27, top: 0,
+                  <ul style={{marginTop: 100, marginLeft:27, top: 0,
 
                     left:0,
                     bottom: 0,
                     position:"absolute"}}>
-                    <Link style={{color:"white"}} to="/ChatManager" >
-                      <FontAwesomeIcon icon={faComment} />
-                    </Link>
+                    <ReactRoundedImage  roundedColor="#ffffff" image={user.picture} roundedSize="6" imageWidth="127" imageHeight="127" />
+
                   </ul>
 
                   <ul className={

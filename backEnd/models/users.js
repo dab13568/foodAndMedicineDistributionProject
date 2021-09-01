@@ -146,6 +146,11 @@ module.exports.updateUser = async function(id,value) {
 module.exports.getAllUsers = async function() {
     return  db.collection("users").find({type: "Distributor"}).toArray();
 }
+module.exports.getManager = async function() {
+    let user = await  db.collection("users").findOne({type: "manager"});
+    console.log(user)
+    return (user)
+}
 
 module.exports.getUser = async function(username) {
     let user = await db.collection("users").findOne({ Id: username })

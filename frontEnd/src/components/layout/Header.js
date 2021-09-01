@@ -7,7 +7,8 @@ import Button from "../elements/Button";
 import LoginButton from "../elements/LoginButton";
 import LogoutButton from "../elements/LogoutButton";
 import AddUserButtonTemp from "../elements/addUserTempButton";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faComment } from '@fortawesome/free-solid-svg-icons'
 import {useAuth0} from "@auth0/auth0-react";
 import ReactRoundedImage from "react-rounded-image";
 
@@ -129,9 +130,11 @@ const Header = ({
                         left:0,
                         bottom: 0,
                         position:"absolute"}}>
-                          <ReactRoundedImage  roundedColor="#ffffff" image={user.picture} roundedSize="6" imageWidth="127" imageHeight="127" />
-
+                        <Link style={{color:"white"}} to="/contactManager" >
+                          <FontAwesomeIcon icon={faComment} />
+                        </Link>
                       </ul>
+
 
 
                     )}

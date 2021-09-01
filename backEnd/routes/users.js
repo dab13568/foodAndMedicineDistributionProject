@@ -35,6 +35,11 @@ router.post("/get-user", async function(req, res) {
   console.log(req.body.sub);
   res.send(user);
 });
+router.post("/get-manager", async function(req, res) {
+  let user = await usersModel.getManager();
+  res.send(user);
+});
+
 
 router.post("/get-all-users", async function(req, res) {
   let users = await usersModel.getAllUsers();
