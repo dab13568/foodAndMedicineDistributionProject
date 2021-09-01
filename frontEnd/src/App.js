@@ -28,6 +28,8 @@ import ShowBlogs from './components/sections/ShowBlogs';
 
 import Home from './views/Home';
 import ShowMap from './views/ShowMap';
+import Demo from './views/Chart';
+
 import { useAuth0 } from "@auth0/auth0-react";
 
 
@@ -55,6 +57,8 @@ function App () {
               {isAuthenticated && (
                   <Switch>
                       <AppRoute exact path="/" component={HelloUser} layout={LayoutDefault} />
+                      <AppRoute exact path="/Chart" component={Demo} layout={LayoutManager} />
+
                       <AppRoute exact path="/SummaryConclusionManager" component={SummaryManager} layout={LayoutManager} />
                       <AppRoute exact path="/OptimalDistribution" component={ShowMap}   layout={LayoutManager}/>
                       <AppRoute exact path="/Manager" component={HelloManager} layout={LayoutManager}  />

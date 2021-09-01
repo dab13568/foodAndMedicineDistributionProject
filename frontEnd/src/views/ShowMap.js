@@ -71,17 +71,40 @@ const ShowMap =
                 const data1 = await answer1.json();
                 if (data1 !== null)
                 {
-                    setAddressesData(data1)
-                    setLocations(data1.map(x=>x.cordinate))
+
+                    setAddressesData(data1.filter(x=>x.distributor===""))
+                    setLocations(data1.filter(x=>x.distributor==="").map(x=>x.cordinate))
                 }
             })();
         }, []);
 
+function unifyArrays(arr)
+{
+    console.log("arr",arr)
+    let ret=[]
+    let temp=[0,0,0,0,0,0]
+    for (let item in arr)
+        for (let i in arr[item]) {
+
+                temp[arr[item][i]] = 1
+
+
+        }
+    for (let item in temp) {
+        if (temp[item] === 1)
+            ret.push(item)
+        console.log("item",typeof(item))
+    }
+    console.log("ret",ret)
+    return ret
+}
 
 async function usersMatch(){
     //var userAddr={1:[32.0683607,34.8285315],0:[32.0781672,34.9084098]}
     console.log("group",group)
-    let temp=group.map(x=>[x.locations.centroid,x.locations.cluster])
+    //let unifiedArr=unifyArrays(group.map(x=>x.locations.clusterInd.map(x=>addressesData[x].daysInWeek)))
+    //console.log("unified",unifiedArr)
+    let temp=group.map(x=>[x.locations.centroid,x.locations.cluster,unifyArrays(x.locations.clusterInd.map(x=>addressesData[x].daysInWeek))])
 
     var dataCentroid={users:users,distAddresses:temp}
     fetch("/clusterize/matchUsers", {
@@ -93,18 +116,41 @@ async function usersMatch(){
         }
     }).then(res => {
         res.json().then(value => {
-
-            console.log("value", data);
+            console.log("value",value)
+            let arrUpdateAddressesDistributorName=[]
+            //let tempLocations=locations
+            for(let item in value) //list of users and their coordinate for distribution
+            {
+                for(let cordinate in value[item].match )
+                {
+                    for(let location in addressesData)
+                    {
+                        console.log("value[item].match[cordinate]",value[item].match[cordinate])
+                        console.log("locations[location].cordinate",addressesData[location].cordinate.map(x=>parseFloat(x)))
+                        if(value[item].match[cordinate][0]===addressesData[location].cordinate.map(x=>parseFloat(x))[0]  && value[item].match[cordinate][1]===addressesData[location].cordinate.map(x=>parseFloat(x))[1]  ) {
+                            arrUpdateAddressesDistributorName.push({
+                                user: value[item].userId,
+                                addressId: addressesData[location]._id
+                            })
+                            break;
+                        }
+                    }
+                }
+            }
+            console.log("arrUpdateAddressesDistributorName", arrUpdateAddressesDistributorName);
             fetch("/users/updateUsersAddresses", {
                 method: "POST",
-                body: JSON.stringify(value),
+                body: JSON.stringify(arrUpdateAddressesDistributorName),
                 headers: {
                     Accept: "application/json",
                     "Content-Type": "application/json"
                 }
             }).then(res => {
                 res.json().then(value => {
+                    //console.log("value",value)
+
                     window.alert("user updated")
+                    window.location.reload()
                 })
             })
 

@@ -145,16 +145,18 @@ module.exports.updateUser = async function(id,value) {
 module.exports.updateUserAddresses=async function(data)
 {
 
-    let succeeded=false
-    let user=await exports.getUser(data.userId)
+    let succeeded=true
+    let user=await exports.getUser(data.user.Id)
     user=JSON.parse(user)
     //console.log("user",user)
 
     let addresses=user.addressesForDistribution
+    //for (let item in data.match)
+        addresses.push(data.addressId)
+
+    console.log("data.match",data.addressId)
     //console.log("addresses",addresses)
-    addresses.push(data.match)
-    //console.log("addresses",addresses)
-    await db.collection("users").findOneAndUpdate({ "Id": data.userId }, {
+    await db.collection("users").findOneAndUpdate({ "Id": data.user.Id }, {
         $set: {
             "addressesForDistribution": addresses,
 
