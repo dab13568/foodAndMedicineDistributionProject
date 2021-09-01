@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="chat">
-      <change afterPath="$PROJECT_DIR$/backEnd/routes/blogs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/AddressesDistributor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/ShowBlogs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/models/Blogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/models/Blogs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/models/addresses.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/models/addresses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/routes/addresses.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/routes/addresses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/layout/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/layout/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/ContactManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/ContactManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/SummaryManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/SummaryManager.js" afterDir="false" />
-    </list>
+    <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="finish" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +83,7 @@
       <workItem from="1630244491093" duration="22932000" />
       <workItem from="1630333576154" duration="26084000" />
       <workItem from="1630413925098" duration="23477000" />
-      <workItem from="1630514668731" duration="17524000" />
+      <workItem from="1630514668731" duration="18269000" />
     </task>
     <task id="LOCAL‎00001" summary="frontend-backend distibution">
       <created>1629847584740</created>
@@ -188,7 +175,13 @@
       <option name="presentableId" value="LOCAL‎00015" />
       <updated>1630464041146</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL‎00016" summary="finish">
+      <created>1630538088645</created>
+      <option name="number" value="LOCAL‎00016" />
+      <option name="presentableId" value="LOCAL‎00016" />
+      <updated>1630538088645</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +204,7 @@
     <MESSAGE value="user-create" />
     <MESSAGE value="add days work" />
     <MESSAGE value="chat" />
-    <option name="LAST_COMMIT_MESSAGE" value="chat" />
+    <MESSAGE value="finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish" />
   </component>
 </project>
