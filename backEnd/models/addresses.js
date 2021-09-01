@@ -45,9 +45,11 @@ module.exports.addAddress = async function(addressRecord)
 
     // if address not exist add the address into the DB
     await db.collection("addresses").insertOne({
+
         "address":addressRecord,
         "type":2,
-        "daysInWeek":[0,1,2,3,4,5]
+        "daysInWeek":[0,1,2,3,4,5],
+        "Distributor":""
     });
 
     return { massage: "address added successfully!", succeeded: true };
@@ -107,7 +109,22 @@ module.exports.updateAddressType = async function(id,val) {
     });
     return { message: message, succeeded: succeeded };
 }
+module.exports.updateAddressesDistributor=async function(data){
+    let succeeded=true
 
+        console.log("data.match[item]",data.addressId)
+        await db.collection("addresses").findOneAndUpdate({ "_id": ObjectId(data.addressId) }, {
+            $set: {
+                "distributor": data.user.name,
+
+            }
+        }).catch(reason => {
+            console.log("reason",reason)
+            succeeded = false;
+        });
+
+    return succeeded
+}
 module.exports.updateAddress = async function(id,value) {
     //let oldType = await getType(username);
 

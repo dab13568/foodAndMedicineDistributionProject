@@ -30,27 +30,40 @@ router.post("/", function(req, res, next) {
 router.post("/matchUsers", function(req, res, next) {
   var data=req.body;
   let arr=[]
-  console.log("temp",data.distAddresses)
+  //console.log("temp",data.distAddresses)
+  let userMatch
+  for (let item in data.distAddresses) {
+    userMatch=undefined
 
-  for(let key in data.users) {
-    let userAddress = data.users[key].cordinate
+    //console.log("addressesDays", data.distAddresses[item][2])
+    let dist=10000
+    for(let key in data.users) {
 
-    let dist=100000000000
-    let match
-    for (let item in data.distAddresses) {
-      console.log("item",data.distAddresses[item])
-      let temp=haversineDistance(userAddress,data.distAddresses[item][0])
+      let userAddress = data.users[key].cordinate
+      let usersDays= data.users[key].daysInWeek
+     // console.log("userDays",usersDays)
 
-      if(dist> temp) {
-        dist = temp
-        match = data.distAddresses[item][1]
-        console.log("match",data.distAddresses[item][1])
+      data.distAddresses[item][2]=data.distAddresses[item][2].map(x=>parseFloat(x))
+      if( data.distAddresses[item][2].every(function(value, index) { return usersDays.includes(value)}) ){
+        //console.log("item", data.distAddresses[item])
+        let temp = haversineDistance(userAddress, data.distAddresses[item][0])
 
+        if (dist > temp) {
+          dist = temp
+          userMatch = data.users[key]
+          //console.log("match", data.distAddresses[item][1])
+
+        }
       }
     }
-    arr.push({userId:data.users[key].Id,match:match})
+    if(userMatch!==undefined) {
+      console.log("user-match",userMatch)
+      arr.push({userId: userMatch, match: data.distAddresses[item][1]})
+    }
   }
+   console.log("arr",arr)
   res.send(arr)
 });
 
 module.exports = router;
+

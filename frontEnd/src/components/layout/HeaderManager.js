@@ -163,6 +163,14 @@ let f=""
                     {!isLoading && isAuthenticated &&
                     (
 
+                        <li>
+                          <Link style={{color:"white"}} to="/Chart" onClick={closeMenu}>Statistics</Link>
+                        </li>
+
+                    )}
+                    {!isLoading && isAuthenticated &&
+                    (
+
 
                       <li>
                       <Link style={{color:"white"}} to="/OptimalDistribution" onClick={closeMenu}>Optimal distribution areas</Link>

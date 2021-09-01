@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const usersModel = require('../models/users')
-
+const addressesModel=require('../models/addresses')
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
@@ -41,9 +41,16 @@ router.post("/get-manager", async function(req, res) {
 
 router.post("/updateUsersAddresses", async function(req, res) {
   console.log("reached updateUsersAddresses")
-  let status
+  let status=true
   for(let item in req.body) {
-     status = await usersModel.updateUserAddresses(req.body[item]);
+    //console.log("updateUserMatch",req.body[item].match)
+    //console.log("updateUser",req.body[item].userId)
+    if(req.body[item].addressId!==undefined) {
+      status = await usersModel.updateUserAddresses(req.body[item]);
+      if (status)
+        status= await addressesModel.updateAddressesDistributor(req.body[item])
+
+    }
   }
   res.send(status);
 });
