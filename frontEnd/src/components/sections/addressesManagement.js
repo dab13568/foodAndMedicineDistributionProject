@@ -10,6 +10,8 @@ import delIcon from '../../../src/assets/images/delIcon.png'
 import Loc from "../../views/LocationIQ";
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
+import {Map, Marker, Popup, TileLayer} from "react-leaflet";
+import getIcon from "../../views/MapIcons";
 
 const AddressesManagement= ({
                             className,
@@ -45,8 +47,9 @@ const AddressesManagement= ({
 
         if (keyword !== '') {
             const results = addresses.filter((addressRec) => {
-                return addressRec.address.includes(keyword) ;
-                // Use the toLowerCase() method to make it case-insensitive
+                if(addressRec.distributor!=="" && addressRec.distributor!==undefined)
+                    return addressRec.address.includes(keyword)||addressRec.distributor.toLowerCase().includes(keyword) ;
+                else return addressRec.address.includes(keyword)
             });
             setfoundAddresses(results);
         } else {
@@ -60,7 +63,6 @@ const AddressesManagement= ({
 
 
 
-    const { user } = useAuth0();
     const [showbutton,setShowButton]=useState(true)
     const [showAddbutton,setShowAddButton]=useState(true)
 
@@ -83,10 +85,28 @@ const AddressesManagement= ({
             {
                 setAddresses(data);
                 setfoundAddresses(data)
+
+                let temp = []
+                for( let i in data)
+                {
+                    temp.push(data[i].cordinate)
+                }
+                var Locations = [];
+                if (temp && temp.length > 0)
+                {
+                    temp.forEach((item, i) => {
+                        Locations.push([item, i]);
+                    });
+                    console.log("this is:", Locations);
+                }
+                setLocations(Locations)
+
             }
 
         })();
     }, []);
+
+
     const animatedComponents = makeAnimated();
 
 
@@ -106,15 +126,23 @@ const AddressesManagement= ({
         setshowAddLoading(true)
         setShowAddButton(false)
         let valid=false
+        let lat=""
+        let lng=""
         await Loc.search(InputAddAddress).then(json =>
         {
 
+            if(json!==null && json!== undefined)
+            {
+                lat=json[0].lat
+                lng=json[0].lon
+            }
+
             valid=true
-            window.alert("valid: "+valid+"כתובת חוקית  ")
+            window.alert("כתובת חוקית  ")
         }).catch(error => window.alert("כתובת לא חוקית"));
         if(valid)
         {
-            const payload={address:InputAddAddress}
+            const payload={address:InputAddAddress,cordinate:[lat,lng]}
             const answer=await fetch('/addresses/add-address',{
                 method: "POST",
                 body:JSON.stringify(payload),
@@ -126,20 +154,8 @@ const AddressesManagement= ({
             if(answer.status===200)
             {
                 window.alert("The address added!")
-                const answer = await fetch('/addresses/get-all-addresses', {
-                    method: "POST",
-                    body:"",
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                });
-                const data = await answer.json();
-                if (data !== null)
-                {
-                    setAddresses(data);
-                    setfoundAddresses(data)
-                }
+                window.location.reload()
+
 
             }
         }
@@ -233,6 +249,7 @@ const AddressesManagement= ({
         }
     }
 
+    const [locations,setLocations]=useState([])
     const [idAddress,setIdAddress]=useState("")
     useEffect(() => {
         (async () => {
@@ -251,20 +268,8 @@ const AddressesManagement= ({
                 if(answer.status===200)
                 {
                     window.alert("The address delete!")
-                    const answer = await fetch('/addresses/get-all-addresses', {
-                        method: "POST",
-                        body:"",
-                        headers: {
-                            'Accept': 'application/json',
-                            'Content-Type': 'application/json'
-                        },
-                    });
-                    const data = await answer.json();
-                    if (data !== null)
-                    {
-                        setAddresses(data);
-                        setfoundAddresses(data)
-                    }
+                    window.location.reload()
+
                 }
                 else
                     window.alert("Error! the changes didnt save")
@@ -272,6 +277,7 @@ const AddressesManagement= ({
 
         })();
     }, [idAddress]);
+
 
 
     return (
@@ -299,6 +305,27 @@ const AddressesManagement= ({
                                     style={{marginBottom:50,padding:"11px 15px",width:"300px"}}
                                 />
                             </li>
+
+                            <li>
+
+                                <Map center={[32.0683607, 34.8285315]} zoom={8}>
+                                    <TileLayer
+                                        attribution='&copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                    />
+                                    {locations && locations.length > 0 ? (
+                                        locations.map((item) => (
+                                            <Marker key={item[1]} position={item[0]} />
+                                        ))
+                                    ) : (
+                                        <div />
+                                    )}
+
+
+                                </Map>
+                            </li>
+
+
                             <li>
 
                                 {showbutton &&
@@ -352,6 +379,12 @@ const AddressesManagement= ({
                                                                 setcurrentIdType(add._id)
                                                             }}
                                                     />
+                                                </li>
+
+                                                <li style={{marginTop:20}}>
+                                                    <span style={{color:"black"}} >Distributor: </span>
+                                                    <span style={{color:"black"}} >{add.distributor} </span>
+
                                                 </li>
                                             </ul>
                                         ))

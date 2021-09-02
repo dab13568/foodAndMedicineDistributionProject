@@ -20,15 +20,16 @@ import AllDistributors from './components/sections/AllDistributors';
 import ContactManager from './components/sections/ContactManager';
 
 import SummaryManager from './components/sections/SummaryManager';
+import AddressesDistributor from './components/sections/AddressesDistributor';
 
 import AddressesManagement from './components/sections/addressesManagement';
-import AddressDistributor from './components/sections/AddressesDistributor';
 import ShowBlogs from './components/sections/ShowBlogs';
+import AddressDistributor from './components/layout/AddressDistributor';
+
 
 
 import Home from './views/Home';
 import ShowMap from './views/ShowMap';
-import Demo from './views/Chart';
 
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -44,7 +45,7 @@ function App () {
   }, );
 
 
-    const { isAuthenticated,user } = useAuth0();
+    const { isAuthenticated } = useAuth0();
 
 
     return (
@@ -57,16 +58,15 @@ function App () {
               {isAuthenticated && (
                   <Switch>
                       <AppRoute exact path="/" component={HelloUser} layout={LayoutDefault} />
-                      <AppRoute exact path="/Chart" component={Demo} layout={LayoutManager} />
-
                       <AppRoute exact path="/SummaryConclusionManager" component={SummaryManager} layout={LayoutManager} />
                       <AppRoute exact path="/OptimalDistribution" component={ShowMap}   layout={LayoutManager}/>
                       <AppRoute exact path="/Manager" component={HelloManager} layout={LayoutManager}  />
                       <AppRoute exact path="/DistributorsDetails" component={AllDistributors} layout={LayoutManager}  />
                       <AppRoute exact path="/AddressesDistribution" component={AddressesManagement} layout={LayoutManager}  />
-                      <AppRoute exact path="/MyDistribution" component={AddressDistributor} layout={LayoutDefault}  />
+                      <AppRoute exact path="/MyDistribution" component={AddressesDistributor} layout={LayoutDefault}  />
                       <AppRoute exact path="/contactManager" component={ContactManager} layout={LayoutDefault}  />
                       <AppRoute exact path="/ShowBlogs" component={ShowBlogs} layout={LayoutDefault}  />
+                      <AppRoute exact path="/AddAddress" component={AddressDistributor}  />
 
                   </Switch>
 

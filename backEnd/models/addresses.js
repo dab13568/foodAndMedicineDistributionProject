@@ -36,7 +36,7 @@ async function getType(address) {
 }
 module.exports.getType = getType
 
-module.exports.addAddress = async function(addressRecord)
+module.exports.addAddress = async function(addressRecord,coordinate)
 {
 
     // check if the address name already exist
@@ -49,7 +49,8 @@ module.exports.addAddress = async function(addressRecord)
         "address":addressRecord,
         "type":2,
         "daysInWeek":[0,1,2,3,4,5],
-        "Distributor":""
+        "cordinate":coordinate,
+        "distributor":""
     });
 
     return { massage: "address added successfully!", succeeded: true };

@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="finish" />
+    <list default="true" id="c2be30d7-aff8-4f7d-86e8-a801eef593de" name="Default Changelist" comment="finish">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backEnd/models/addresses.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/models/addresses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backEnd/routes/addresses.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/routes/addresses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/layout/AddressDistributor.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/layout/AddressDistributor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/components/sections/addressesManagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/components/sections/addressesManagement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/views/ShowMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/views/ShowMap.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,7 +91,7 @@
       <workItem from="1630244491093" duration="22932000" />
       <workItem from="1630333576154" duration="26084000" />
       <workItem from="1630413925098" duration="23477000" />
-      <workItem from="1630514668731" duration="18269000" />
+      <workItem from="1630514668731" duration="26377000" />
     </task>
     <task id="LOCAL‎00001" summary="frontend-backend distibution">
       <created>1629847584740</created>
@@ -181,7 +189,13 @@
       <option name="presentableId" value="LOCAL‎00016" />
       <updated>1630538088645</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL‎00017" summary="finish">
+      <created>1630538760761</created>
+      <option name="number" value="LOCAL‎00017" />
+      <option name="presentableId" value="LOCAL‎00017" />
+      <updated>1630538760761</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

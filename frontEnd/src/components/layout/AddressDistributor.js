@@ -17,7 +17,7 @@ const defaultProps = {
 }
 
 
-const ShowMap = ({
+const AddressDistributor = ({
                      className,
                      topOuterDivider,
                      bottomOuterDivider,
@@ -122,4 +122,4 @@ const ShowMap = ({
 
 
 }
-export default ShowMap
+export default AddressDistributor

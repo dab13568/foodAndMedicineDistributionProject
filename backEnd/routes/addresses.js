@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
     res.send('respond with a resource');
 });
 router.post("/add-address", async function(req, res) {
-    let { succeeded } = await addressesModel.addAddress(req.body.address);
+    let { succeeded } = await addressesModel.addAddress(req.body.address,req.body.cordinate);
     res.status(succeeded ? 200 : 400);
     res.send(succeeded);
 });

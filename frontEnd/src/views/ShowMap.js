@@ -197,13 +197,14 @@ async function usersMatch(){
             <div className="container-sm">
                 <div className={innerClasses}>
                     <div className="hero-content">
-                        <h1 className="mt-0 mb-16 ">
-                            Welcome back <span className="text-color-primary">hello!</span>
-                        </h1>
+                        <h6 className="mt-0 mb-16 ">
+                            The map shows the addresses that have not been assigned a divider.
+                            Press "Centralized areas" to find key distribution areas. Then press "click to match user" to place a divider for addresses by distance.
+                        </h6>
 
                         <Map  locations={locations}
-                                        group={group} />?
-                        <button onClick={click}> click on me</button>
+                                        group={group} />
+                        <button onClick={click}>Centralized areas </button>
                         <button onClick={usersMatch}> click to match user</button>
                     </div>
                 </div>
