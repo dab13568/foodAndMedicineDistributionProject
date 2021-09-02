@@ -361,6 +361,8 @@ const AddressesManagement= ({
                                                             isMulti
                                                             defaultValue={  add.daysInWeek.map(x=>options[x])}
                                                             options={options}
+                                                            isDisabled={add.distributor!==""? true:false}
+
                                                             onChange={(e) => {
                                                                 onChange(e);
                                                                 setCurrentId(add._id)
@@ -374,6 +376,7 @@ const AddressesManagement= ({
 
                                                             defaultValue={  types[add.type]}
                                                             options={types}
+                                                            isDisabled={add.distributor!==""? true:false}
                                                             onChange={(e) => {
                                                                 onChangeType(e);
                                                                 setcurrentIdType(add._id)

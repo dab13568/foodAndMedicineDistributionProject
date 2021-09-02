@@ -160,14 +160,7 @@ let f=""
                         </li>
 
                     )}
-                    {!isLoading && isAuthenticated &&
-                    (
 
-                        <li>
-                          <Link style={{color:"white"}} to="/Chart" onClick={closeMenu}>Statistics</Link>
-                        </li>
-
-                    )}
                     {!isLoading && isAuthenticated &&
                     (
 
